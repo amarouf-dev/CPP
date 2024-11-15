@@ -1,5 +1,5 @@
 NAME = PhoneBook
-CC = c++
+CPP = c++
 Cflags = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
@@ -10,12 +10,12 @@ OSRC = $(SRC:.cpp=.o)
 all:$(NAME)
 
 $(NAME): $(OSRC)
-	$(CC) $(Cflags) $(OSRC) -o $(NAME)
+	$(CPP) $(Cflags) $(OSRC) -o $(NAME)
 
 clean:
-	rm -rf $(OSRC)
+	$(RM) $(OSRC)
 
 fclean:
-	$(RM) $(NAME)
+	$(RM) $(OSRC) $(NAME)
 
 re: fclean all

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contacts.hpp"
+#include "PhoneBook.hpp"
 
 void    fix_print(std::string str)
 {
@@ -62,6 +62,8 @@ void	contact_prompt(Contact *contacts)
 	std::cout << "============================================\n";
 	std::cout << "Enter an index: ";
 	std::cin >> rd;
+	if (rd.empty())
+		return;
 	std::cout << "============================================\n";
 	index = atoi(rd.c_str());
 	while (contacts[i].index)
@@ -73,6 +75,7 @@ void	contact_prompt(Contact *contacts)
 		}
 		i ++;
 	}
+	std::cout << "Out of range!\n";
 }
 
 void print_contact_info(Contact *contacts)
@@ -106,14 +109,24 @@ void add_contact(Contact *contacts)
 		index = 0;
 	std::cout << "First Name: ";
 	std::cin >> contacts[index].f_name;
+	if (contacts[index].f_name.empty())
+		return ;
 	std::cout << "Last Name: ";
 	std::cin >> contacts[index].l_name;
+	if (contacts[index].l_name.empty())
+		return ;
 	std::cout << "NickName: ";
 	std::cin >> contacts[index].n_name;
+	if (contacts[index].n_name.empty())
+		return ;
 	std::cout << "Phone Number: ";
 	std::cin >> contacts[index].phone_nbr;
+	if (contacts[index].phone_nbr.empty())
+		return ;
 	std::cout << "Darckest Secret: ";
 	std::cin >> contacts[index].secret;
+	if (contacts[index].secret.empty())
+		return ;
 	contacts[index].index = (index + 1);
 	index ++;
 }
@@ -132,6 +145,7 @@ void _menu()
 
 	while (1)
 	{
+		command = "";
 		std::cout << "===============MENU===============\n";
 		std::cout << "= OPTIONS:                       =\n";
 		std::cout << "= 1- ADD                         =\n";
@@ -140,6 +154,11 @@ void _menu()
 		std::cout << "==================================\n";
 		std::cout << "Enter a Command: ";
 		std::cin >> command;
+		if (command.empty())
+		{
+			std::cout << "IM HEREEEEEE\n";
+			return;
+		}
 		if (!strcmp(command.c_str(), "add"))
 			add_contact(contacts);
 		if (!strcmp(command.c_str(), "search"))

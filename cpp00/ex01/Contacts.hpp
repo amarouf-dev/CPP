@@ -12,11 +12,16 @@
 
 #ifndef CONTACTS_HPP
 #define CONTACTS_HPP
-#include "PhoneBook.hpp"
-class PhoneBook
+
+class Contact
 {
     public:
-    Contact contacts[8];
+    std::string f_name;
+    std::string l_name;
+    std::string n_name;
+    std::string phone_nbr;
+    std::string secret;
+    int         index;
 };
 
 #endif

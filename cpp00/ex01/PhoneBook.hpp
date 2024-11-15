@@ -18,17 +18,11 @@
 #include <iostream>
 #include <string>
 #include <unistd.h>
+#include "Contacts.hpp"
 
-
-class Contact
+class PhoneBook
 {
     public:
-    std::string f_name;
-    std::string l_name;
-    std::string n_name;
-    std::string phone_nbr;
-    std::string secret;
-    int         index;
+    Contact contacts[8];
 };
-
 #endif
