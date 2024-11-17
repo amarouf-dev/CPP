@@ -155,10 +155,7 @@ void _menu()
 		std::cout << "Enter a Command: ";
 		std::cin >> command;
 		if (command.empty())
-		{
-			std::cout << "IM HEREEEEEE\n";
 			return;
-		}
 		if (!strcmp(command.c_str(), "add"))
 			add_contact(contacts);
 		if (!strcmp(command.c_str(), "search"))
