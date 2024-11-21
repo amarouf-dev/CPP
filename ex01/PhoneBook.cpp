@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 23:25:20 by amarouf           #+#    #+#             */
-/*   Updated: 2024/11/21 11:19:39 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/11/21 12:22:37 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,19 +48,19 @@ void contact_prompt(Contact *Contacts, int index)
 		return;
 	}
 	rd --;
-	std::cout << "First Name: " << Contacts[rd].getFname() << "\n";
-	std::cout << "Last Name: " << Contacts[rd].getLname() << "\n";
-	std::cout << "NickName: " << Contacts[rd].getNname() << "\n";
-	std::cout << "Phone Number: " << Contacts[rd].getPnumber() << "\n";
-	std::cout << "Darckest Secret: " << Contacts[rd].getSecret() << "\n";
+	std::cout << "\033[1mFirst Name: \033[0m" << Contacts[rd].getFname() << "\n";
+	std::cout << "\033[1mLast Name: \033[0m" << Contacts[rd].getLname() << "\n";
+	std::cout << "\033[1mNickName: \033[0m" << Contacts[rd].getNname() << "\n";
+	std::cout << "\033[1mPhone Number: \033[0m" << Contacts[rd].getPnumber() << "\n";
+	std::cout << "\033[1mDarckest Secret: \033[0m" << Contacts[rd].getSecret() << "\n";
 }
 
-void print_contact_info(Contact *Contacts, int index)
+void print_contact_info(Contact Contacts[8], int index)
 {
 	int i = 0;
 	int j;
 
-	while (i < index)
+	while (Contacts[i].getIndex())
 	{
 		
 		j = -1;
@@ -79,34 +79,36 @@ void print_contact_info(Contact *Contacts, int index)
 	contact_prompt(Contacts, index);
 }
 
-void PhoneBook::search_contact()
+void PhoneBook::search_contact(PhoneBook phone)
 {
-	print_contact_info(PhoneBook::Contacts, PhoneBook::index);
+	print_contact_info(phone.Contacts, phone.index);
 }
 
-void PhoneBook::add_contact()
+void PhoneBook::add_contact(PhoneBook *phone)
 {
 	std::string rd;
 
-	std::cout << "First Name: ";
+	std::cout << "\033[1mFirst Name: \033[0m";
 	std::cin >> rd;
-	PhoneBook::Contacts[PhoneBook::index].setFname(rd);
-	std::cout << "Last Name: ";
+	phone->Contacts[phone->index].setFname(rd);
+	std::cout << "\033[1mLast Name: \033[0m";
 	std::cin >> rd;
-	PhoneBook::Contacts[PhoneBook::index].setLname(rd);
-	std::cout << "NickName: ";
+	phone->Contacts[phone->index].setLname(rd);
+	std::cout << "\033[1mNickName: \033[0m";
 	std::cin >> rd;
-	PhoneBook::Contacts[PhoneBook::index].setNname(rd);
-	std::cout << "Phone Number: ";
+	phone->Contacts[phone->index].setNname(rd);
+	std::cout << "\033[1mPhone Number: \033[0m";
 	std::cin >> rd;
-	PhoneBook::Contacts[PhoneBook::index].setPnumber(rd);
-	std::cout << "Darckest Secret: ";
+	phone->Contacts[phone->index].setPnumber(rd);
+	std::cout << "\033[1mDarckest Secret: \033[0m";
 	std::cin >> rd;
-	PhoneBook::Contacts[PhoneBook::index].setSecret(rd);
-	PhoneBook::Contacts[PhoneBook::index].setIndex(PhoneBook::index + 1);
-	PhoneBook::index ++;
+	phone->Contacts[phone->index].setSecret(rd);
+	phone->Contacts[phone->index].setIndex(phone->index + 1);
+	phone->index ++;
+	if (phone->index == 8)
+		phone->index = 0;
 }
-
+#include <unistd.h>
 void _menu()
 {
 	int i = 0;
@@ -128,11 +130,11 @@ void _menu()
 			return;
 		if (!strcmp(command.c_str(), "add") || !strcmp(command.c_str(), "ADD"))
 		{
-			phone.add_contact();
+			phone.add_contact(&phone);
 			std::cout << "\033[1;32mContact added successfully!\033[0m\n";
 		}
 		if (!strcmp(command.c_str(), "search") || !strcmp(command.c_str(), "SEARCH"))
-			phone.search_contact();
+			phone.search_contact(phone);
 		if (!strcmp(command.c_str(), "exit") || !strcmp(command.c_str(), "EXIT"))
 		{
 			std::cout << "\033[1;31mExit!\n\033[0m";
