@@ -7,10 +7,12 @@ SRC = PhoneBook.cpp Contact.cpp \
 
 OSRC = $(SRC:.cpp=.o)
 
+		
 all:$(NAME)
 
 $(NAME): $(OSRC)
 	$(CPP) $(Cflags) $(OSRC) -o $(NAME)
+
 
 clean:
 	$(RM) $(OSRC)

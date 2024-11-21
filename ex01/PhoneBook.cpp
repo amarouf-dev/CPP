@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 23:25:20 by amarouf           #+#    #+#             */
-/*   Updated: 2024/11/21 12:22:37 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/11/21 12:46:27 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,22 +60,32 @@ void print_contact_info(Contact Contacts[8], int index)
 	int i = 0;
 	int j;
 
-	while (Contacts[i].getIndex())
+	if (index)
 	{
-		
-		j = -1;
-		while (++j < 4)
-			std::cout << ' ';
-		std::cout << Contacts[i].getIndex();
-		while (++j < 10)
-			std::cout << ' ';
-		std::cout << '|';
-		fix_print(Contacts[i].getFname());
-		fix_print(Contacts[i].getLname());
-		fix_print(Contacts[i].getNname());
-		std::cout << '\n';
-		i ++;
+		while (Contacts[i].getIndex())
+		{
+			
+			j = -1;
+			while (++j < 4)
+				std::cout << ' ';
+			std::cout << Contacts[i].getIndex();
+			while (++j < 10)
+				std::cout << ' ';
+			std::cout << '|';
+			fix_print(Contacts[i].getFname());
+			fix_print(Contacts[i].getLname());
+			fix_print(Contacts[i].getNname());
+			std::cout << '\n';
+			i ++;
+		}
 	}
+	else
+	{
+		std::cout << "\033[1;31mNo Contacts to display !\n\033[0m";
+		return;
+	}
+	
+	
 	contact_prompt(Contacts, index);
 }
 
@@ -90,6 +100,11 @@ void PhoneBook::add_contact(PhoneBook *phone)
 
 	std::cout << "\033[1mFirst Name: \033[0m";
 	std::cin >> rd;
+	if (rd.empty())
+	{
+		std::cout << "\033[1;31m\nNo empty lines !\n\033[0m";
+		return;
+	}
 	phone->Contacts[phone->index].setFname(rd);
 	std::cout << "\033[1mLast Name: \033[0m";
 	std::cin >> rd;
@@ -133,9 +148,9 @@ void _menu()
 			phone.add_contact(&phone);
 			std::cout << "\033[1;32mContact added successfully!\033[0m\n";
 		}
-		if (!strcmp(command.c_str(), "search") || !strcmp(command.c_str(), "SEARCH"))
+		else if (!strcmp(command.c_str(), "search") || !strcmp(command.c_str(), "SEARCH"))
 			phone.search_contact(phone);
-		if (!strcmp(command.c_str(), "exit") || !strcmp(command.c_str(), "EXIT"))
+		else if (!strcmp(command.c_str(), "exit") || !strcmp(command.c_str(), "EXIT"))
 		{
 			std::cout << "\033[1;31mExit!\n\033[0m";
 			return;
