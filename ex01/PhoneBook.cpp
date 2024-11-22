@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 23:25:20 by amarouf           #+#    #+#             */
-/*   Updated: 2024/11/21 12:46:27 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/11/22 09:59:05 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,13 @@ void    fix_print(std::string str)
 
 void contact_prompt(Contact *Contacts, int index)
 {
-	int rd = 0;
+	std::string str;
+	int rd;
 	int i = 0;
 
 	std::cout << "\033[1mEnter the index of a contact: \033[0m";
-	std::cin >> rd;
+	std::cin >> str;
+	rd = atoi(str.c_str());
 	if (rd <= 0 || rd > index)
 	{
 		std::cout << "\033[1;31mInvalid index!\033[0m\n";
@@ -60,7 +62,7 @@ void print_contact_info(Contact Contacts[8], int index)
 	int i = 0;
 	int j;
 
-	if (index)
+	if (Contacts[0].getIndex())
 	{
 		while (Contacts[i].getIndex())
 		{
