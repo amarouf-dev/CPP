@@ -3,39 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarouf <amarouf@student.42.fr>            #+#  +:+       +#+        */
+/*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-10-23 15:44:31 by amarouf           #+#    #+#             */
-/*   Updated: 2024-10-23 15:44:31 by amarouf          ###   ########.fr       */
+/*   Created: 2024/11/19 23:25:20 by amarouf           #+#    #+#             */
+/*   Updated: 2024/11/29 14:36:32 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+
+bool checkEOF(std::string str)
+{
+	if (std::cin.eof())
+	{
+		std::cout << "\033[1;31mEnd Of line!\033[0m\n";
+		return (true);
+	}
+	return (false);
+}
 
 void    fix_print(std::string str)
 {
 	int	i = 0;
 
 	if (str.length() > 10)
-	{
-		std::cout.write(str.c_str(), 9);
-		std::cout << '.';
-	}
+		(std::cout.write(str.c_str(), 9) ,std::cout << '.');
 	else if (str.length() < 10)
 	{
 		i = ((10 - str.length()) / 2);
-		while (i)
-		{
+		while (i --)
 			std::cout << ' ';
-			i --;
-		}
 		i = ((10 - str.length()) / 2);
 		std::cout << str;
-			while (i)
-		{
+		while (i --)
 			std::cout << ' ';
-			i --;
-		}
 		if (str.length() % 2 != 0)
 			std::cout << ' ';
 	}
@@ -44,124 +45,150 @@ void    fix_print(std::string str)
 	std::cout << '|';
 }
 
-void	print_contact(Contact contacts)
+bool contact_prompt(Contact *Contacts, int index)
 {
-	std::cout << "First Name: " << contacts.f_name << '\n';
-	std::cout << "Last Name: " << contacts.l_name << '\n';
-	std::cout << "NickName: " << contacts.n_name << '\n';
-	std::cout << "Phone Number: " << contacts.phone_nbr << '\n';
-	std::cout << "Darckest Secret: " << contacts.secret << '\n';
-}
+	int rd = 0;
+	int i = 0;
 
-void	contact_prompt(Contact *contacts)
-{
-	int	i = 0;
-	std::string rd;
-	int	index = 0;
-
-	std::cout << "============================================\n";
-	std::cout << "Enter an index: ";
+	std::cout << "\033[1mEnter the index of a contact: \033[0m";
 	std::cin >> rd;
-	if (rd.empty())
-		return;
-	std::cout << "============================================\n";
-	index = atoi(rd.c_str());
-	while (contacts[i].index)
+	if (checkEOF(std::to_string(rd)), std::cin.fail())
+		return (false);
+	if (rd <= 0 || rd > index)
 	{
-		if (contacts[i].index == index)
-		{
-			print_contact(contacts[i]);
-			return;
-		}
-		i ++;
+		std::cout << "\033[1;31mInvalid index!\033[0m\n";
+		return (true);
 	}
-	std::cout << "Out of range!\n";
+	rd --;
+	std::cout << "\033[1mFirst Name: \033[0m" << Contacts[rd].getFname() << "\n";
+	std::cout << "\033[1mLast Name: \033[0m" << Contacts[rd].getLname() << "\n";
+	std::cout << "\033[1mNickName: \033[0m" << Contacts[rd].getNname() << "\n";
+	std::cout << "\033[1mPhone Number: \033[0m" << Contacts[rd].getPnumber() << "\n";
+	std::cout << "\033[1mDarckest Secret: \033[0m" << Contacts[rd].getSecret() << "\n";
+	return (true);
 }
 
-void print_contact_info(Contact *contacts)
+bool print_contact_info(Contact Contacts[8], int index)
 {
 	int i = 0;
-	int j = -1;
+	int j;
 
-	while (contacts[i].index)
+	if (Contacts[0].getIndex())
 	{
-		j = -1;
-		while (++j < 4)
-			std::cout << ' ';
-		std::cout << contacts[i].index;
-		while (++j < 10)
-			std::cout << ' ';
-		std::cout << '|';
-		fix_print(contacts[i].f_name);
-		fix_print(contacts[i].l_name);
-		fix_print(contacts[i].n_name);
-		std::cout << '\n';
-		i ++;
+		while (Contacts[i].getIndex())
+		{
+			
+			j = -1;
+			while (++j < 4)
+				std::cout << ' ';
+			std::cout << Contacts[i].getIndex();
+			while (++j < 10)
+				std::cout << ' ';
+			std::cout << '|';
+			fix_print(Contacts[i].getFname());
+			fix_print(Contacts[i].getLname());
+			fix_print(Contacts[i].getNname());
+			std::cout << '\n';
+			i ++;
+		}
 	}
-	contact_prompt(contacts);
+	else
+	{
+		std::cout << "\033[1;31mNo Contacts to display !\n\033[0m";
+		return (true);
+	}
+	if (contact_prompt(Contacts, index) == false)
+		return (false);
+	return (true);
 }
 
-void add_contact(Contact *contacts)
+bool PhoneBook::search_contact(PhoneBook phone)
 {
-	static int index;
-
-	if (index == 8)
-		index = 0;
-	std::cout << "First Name: ";
-	std::cin >> contacts[index].f_name;
-	if (contacts[index].f_name.empty())
-		return ;
-	std::cout << "Last Name: ";
-	std::cin >> contacts[index].l_name;
-	if (contacts[index].l_name.empty())
-		return ;
-	std::cout << "NickName: ";
-	std::cin >> contacts[index].n_name;
-	if (contacts[index].n_name.empty())
-		return ;
-	std::cout << "Phone Number: ";
-	std::cin >> contacts[index].phone_nbr;
-	if (contacts[index].phone_nbr.empty())
-		return ;
-	std::cout << "Darckest Secret: ";
-	std::cin >> contacts[index].secret;
-	if (contacts[index].secret.empty())
-		return ;
-	contacts[index].index = (index + 1);
-	index ++;
+	if (print_contact_info(phone.Contacts, phone.index) == false)
+		return (false);
+	return (true);
 }
 
+bool PhoneBook::add_contact(PhoneBook *phone)
+{
+	std::string rd;
+
+	std::cout << "\033[1mFirst Name: \033[0m";
+	std::getline(std::cin, rd);
+	if (checkEOF(rd))
+		return (false);
+	phone->Contacts[phone->index].setFname(rd);
+	std::cout << "\033[1mLast Name: \033[0m";
+	std::getline(std::cin, rd);
+	if (checkEOF(rd))
+		return (false);
+	phone->Contacts[phone->index].setLname(rd);
+	std::cout << "\033[1mNickName: \033[0m";
+	std::getline(std::cin, rd);
+	if (checkEOF(rd))
+		return (false);
+	phone->Contacts[phone->index].setNname(rd);
+	std::cout << "\033[1mPhone Number: \033[0m";
+	std::getline(std::cin, rd);
+	if (checkEOF(rd))
+		return (false);
+	phone->Contacts[phone->index].setPnumber(rd);
+	std::cout << "\033[1mDarckest Secret: \033[0m";
+	std::getline(std::cin, rd);
+	if (checkEOF(rd))
+		return (false);
+	phone->Contacts[phone->index].setSecret(rd);
+	phone->Contacts[phone->index].setIndex(phone->index + 1);
+	phone->index ++;
+	if (phone->index == 8)
+		phone->index = 0;
+	return (true);
+}
+#include <unistd.h>
 void _menu()
 {
 	int i = 0;
-	Contact contacts[8];
+	PhoneBook phone;
 
-	while(i < 9)
-	{
-		contacts[i].index = 0;
-		i ++;
-	}
 	std::string command;
 
-	while (1)
+	while (true)
 	{
-		command = "";
-		std::cout << "===============MENU===============\n";
+		std::cout << "\033[1m===============MENU===============\n";
 		std::cout << "= OPTIONS:                       =\n";
 		std::cout << "= 1- ADD                         =\n";
 		std::cout << "= 2- SEARCH                      =\n";
 		std::cout << "= 3- EXIT                        =\n";
 		std::cout << "==================================\n";
-		std::cout << "Enter a Command: ";
-		std::cin >> command;
-		if (command.empty())
+		std::cout << "->Enter a Command: \033[0m";
+		std::getline(std::cin, command);
+		if (checkEOF(command))
+			break;
+		if (!strcmp(command.c_str(), "add") || !strcmp(command.c_str(), "ADD"))
+		{
+			std::cout << "\033[1m-Add a contact:\033[0m\n";
+			if (phone.add_contact(&phone) == true)
+				std::cout << "\033[1;32mContact added successfully!\033[0m\n";
+			else
+			{
+				std::cout << "\033[1;31mContact not added!\033[0m\n";
+				break;
+			}
+		}
+		else if (!strcmp(command.c_str(), "search") || !strcmp(command.c_str(), "SEARCH"))
+		{
+			if (phone.search_contact(phone) == false)
+			{
+				std::cout << "\033[1;31mContact not found!\033[0m\n";
+			}
+		}
+		else if (!strcmp(command.c_str(), "exit") || !strcmp(command.c_str(), "EXIT"))
+		{
+			std::cout << "\033[1;31mExit!\n\033[0m";
 			return;
-		if (!strcmp(command.c_str(), "add"))
-			add_contact(contacts);
-		if (!strcmp(command.c_str(), "search"))
-			print_contact_info(contacts);
-		if (!strcmp(command.c_str(), "exit"))
-			return;
+		}
+		else
+			std::cout << "\033[1;31mInvalid Command!\033[0m\n";
 	}
 }
 
