@@ -1,10 +1,9 @@
-
-NAME = Account
+NAME = ZombieHorde
 CPP = c++
-Cflags = -Wall -Wextra -Werror -std=c++98
+Cflags = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 RM = rm -rf
 
-SRC = Account.cpp tests.cpp\
+SRC = main.cpp Zombie.cpp zombieHorde.cpp \
 
 OSRC = $(SRC:.cpp=.o)
 

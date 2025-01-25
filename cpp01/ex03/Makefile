@@ -1,18 +1,17 @@
-NAME = PhoneBook
+NAME = Weapon
 CPP = c++
-Cflags = -Wall -Wextra -Werror -std=c++98
+Cflags = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 RM = rm -rf
 
-SRC = PhoneBook.cpp Contact.cpp \
+SRC = main.cpp Weapon.cpp \
+	HumanA.cpp HumanB.cpp\
 
 OSRC = $(SRC:.cpp=.o)
 
-		
 all:$(NAME)
 
 $(NAME): $(OSRC)
 	$(CPP) $(Cflags) $(OSRC) -o $(NAME)
-
 
 clean:
 	$(RM) $(OSRC)

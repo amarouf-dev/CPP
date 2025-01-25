@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 12:14:35 by amarouf           #+#    #+#             */
-/*   Updated: 2024/11/22 11:47:23 by amarouf          ###   ########.fr       */
+/*   Created: 2024/11/22 15:18:01 by amarouf           #+#    #+#             */
+/*   Updated: 2024/11/23 16:27:18 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
 
-Zombie* newZombie( std::string name )
+int main ()
 {
-	Zombie *zombie = new Zombie;
-	zombie->setName(name);
-	return (zombie);
+    std::string str = "HI THIS IS BRAIN";
+    std::string *ptr = &str;
+    std::string& ref = *ptr;
+
+    std::cout << &str << "\n";
+    std::cout << ptr << "\n";
+    std::cout << &ref << "\n";
+    
+    std::cout << str << "\n";
+    std::cout << *ptr << "\n";
+    std::cout << ref << "\n";
+    return 0;
 }

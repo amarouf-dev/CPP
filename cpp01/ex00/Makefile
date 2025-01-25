@@ -1,6 +1,6 @@
 NAME = Zombie
 CPP = c++
-Cflags = -Wall -Wextra -Werror -std=c++98
+Cflags = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 RM = rm -rf
 
 SRC = main.cpp Zombie.cpp newZombie.cpp  randomChump.cpp \

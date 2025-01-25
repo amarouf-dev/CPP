@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/19 23:25:17 by amarouf           #+#    #+#             */
-/*   Updated: 2024/11/21 12:21:03 by amarouf          ###   ########.fr       */
+/*   Created: 2024/11/23 16:29:46 by amarouf           #+#    #+#             */
+/*   Updated: 2024/12/16 09:24:57 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Weapon.hpp"
 
-#include "Contact.hpp"
-
-class PhoneBook
+void	Weapon::setType(std::string new_type)
 {
-    private:
-        Contact Contacts[8];
-        int index;
-    public:
-        PhoneBook(): index(0){};
-        void add_contact(PhoneBook *phone);
-        void search_contact(PhoneBook phone);
-};
+	this->type = new_type;
+}
+
+const std::string	Weapon::getType()
+{
+    return (type);
+}

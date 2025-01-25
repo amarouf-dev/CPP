@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 12:10:37 by amarouf           #+#    #+#             */
-/*   Updated: 2024/11/15 12:23:11 by amarouf          ###   ########.fr       */
+/*   Updated: 2024/11/22 11:34:28 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ class Zombie
     std::string name;
 
     public:
+    std::string getName();
+    void setName(std::string new_name);
     void announce( void )
     {
         std::cout << name << ": BraiiiiiiinnnzzzZ...";

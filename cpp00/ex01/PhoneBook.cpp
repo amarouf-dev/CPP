@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 23:25:20 by amarouf           #+#    #+#             */
-/*   Updated: 2024/11/29 14:36:32 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/01/08 19:11:04 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,33 +115,27 @@ bool PhoneBook::add_contact(PhoneBook *phone)
 
 	std::cout << "\033[1mFirst Name: \033[0m";
 	std::getline(std::cin, rd);
-	if (checkEOF(rd))
-		return (false);
+	if (checkEOF(rd)) return (false);
 	phone->Contacts[phone->index].setFname(rd);
 	std::cout << "\033[1mLast Name: \033[0m";
 	std::getline(std::cin, rd);
-	if (checkEOF(rd))
-		return (false);
+	if (checkEOF(rd)) return (false);
 	phone->Contacts[phone->index].setLname(rd);
 	std::cout << "\033[1mNickName: \033[0m";
 	std::getline(std::cin, rd);
-	if (checkEOF(rd))
-		return (false);
+	if (checkEOF(rd)) return (false);
 	phone->Contacts[phone->index].setNname(rd);
 	std::cout << "\033[1mPhone Number: \033[0m";
 	std::getline(std::cin, rd);
-	if (checkEOF(rd))
-		return (false);
+	if (checkEOF(rd)) return (false);
 	phone->Contacts[phone->index].setPnumber(rd);
 	std::cout << "\033[1mDarckest Secret: \033[0m";
 	std::getline(std::cin, rd);
-	if (checkEOF(rd))
-		return (false);
+	if (checkEOF(rd)) return (false);
 	phone->Contacts[phone->index].setSecret(rd);
 	phone->Contacts[phone->index].setIndex(phone->index + 1);
 	phone->index ++;
-	if (phone->index == 8)
-		phone->index = 0;
+	if (phone->index == 8) phone->index = 0;
 	return (true);
 }
 #include <unistd.h>
@@ -164,7 +158,7 @@ void _menu()
 		std::getline(std::cin, command);
 		if (checkEOF(command))
 			break;
-		if (!strcmp(command.c_str(), "add") || !strcmp(command.c_str(), "ADD"))
+		if (command == "add" || command == "ADD")
 		{
 			std::cout << "\033[1m-Add a contact:\033[0m\n";
 			if (phone.add_contact(&phone) == true)
@@ -175,14 +169,11 @@ void _menu()
 				break;
 			}
 		}
-		else if (!strcmp(command.c_str(), "search") || !strcmp(command.c_str(), "SEARCH"))
+		else if (command == "search" || command == "SEARCH")
 		{
-			if (phone.search_contact(phone) == false)
-			{
-				std::cout << "\033[1;31mContact not found!\033[0m\n";
-			}
+			phone.search_contact(phone);
 		}
-		else if (!strcmp(command.c_str(), "exit") || !strcmp(command.c_str(), "EXIT"))
+		else if (command == "exit" || command == "EXIT")
 		{
 			std::cout << "\033[1;31mExit!\n\033[0m";
 			return;

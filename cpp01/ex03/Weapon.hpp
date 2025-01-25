@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 12:14:35 by amarouf           #+#    #+#             */
-/*   Updated: 2024/11/22 11:47:23 by amarouf          ###   ########.fr       */
+/*   Created: 2024/11/23 17:21:16 by amarouf           #+#    #+#             */
+/*   Updated: 2024/12/15 14:51:05 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#pragma once
+#include <iostream>
+// #include "HumanA.hpp"
+// #include "HumanB.hpp"
 
-Zombie* newZombie( std::string name )
+class Weapon
 {
-	Zombie *zombie = new Zombie;
-	zombie->setName(name);
-	return (zombie);
-}
+    private:
+    std::string type;
+    
+    public:
+    Weapon(std::string type): type(type){};
+    const std::string getType();
+    void setType(std::string new_type);
+};

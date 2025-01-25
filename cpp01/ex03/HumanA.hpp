@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 12:14:35 by amarouf           #+#    #+#             */
-/*   Updated: 2024/11/22 11:47:23 by amarouf          ###   ########.fr       */
+/*   Created: 2024/11/23 17:21:01 by amarouf           #+#    #+#             */
+/*   Updated: 2024/12/13 18:19:35 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#pragma once
 
-Zombie* newZombie( std::string name )
+#include "Weapon.hpp"
+class HumanA
 {
-	Zombie *zombie = new Zombie;
-	zombie->setName(name);
-	return (zombie);
-}
+    private:
+    std::string name;
+    Weapon& weapon_ref;
+    public:
+    HumanA(std::string name, Weapon weapon_ref): name(name),  weapon_ref(weapon_ref){};
+    void attack();
+};

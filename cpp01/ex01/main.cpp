@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 12:14:35 by amarouf           #+#    #+#             */
-/*   Updated: 2024/11/22 11:47:23 by amarouf          ###   ########.fr       */
+/*   Created: 2024/11/22 11:49:23 by amarouf           #+#    #+#             */
+/*   Updated: 2024/11/22 14:41:34 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie* newZombie( std::string name )
+int main ()
 {
-	Zombie *zombie = new Zombie;
-	zombie->setName(name);
-	return (zombie);
+    int i = 0;
+    Zombie *horde;
+
+    horde = zombieHorde(5, "Zombie");
+    while (i < 5)
+    {
+        horde[i].announce();
+        std::cout << "\n" << std::endl;
+        delete &horde[i];
+        i++;
+    }
 }
