@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 23:25:12 by amarouf           #+#    #+#             */
-/*   Updated: 2024/11/22 10:06:21 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/02/27 15:53:55 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,16 @@ class Contact
     int         index;
     public:
     Contact():index(0){};
-    //Setters
     std::string getFname();
     std::string getLname();
     std::string getNname();
     std::string getPnumber();
     std::string getSecret();
     int         getIndex();
-    //Getters
     void setFname(std::string set);
     void setLname(std::string set);
     void setNname(std::string set);
-    void setPnumber(std::string set);
+    bool setPnumber(std::string set);
     void setSecret(std::string set);
     void setIndex(int new_index);
 };

@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 23:25:17 by amarouf           #+#    #+#             */
-/*   Updated: 2024/11/28 23:43:56 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/03/05 13:27:02 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,12 @@ class PhoneBook
 {
     private:
         Contact Contacts[8];
-        int index;
+        int     index;
     public:
         PhoneBook(): index(0){};
         bool add_contact(PhoneBook *phone);
         bool search_contact(PhoneBook phone);
 };
+
+void    fix_print(std::string str);
+bool    pars_number(std::string nbr);

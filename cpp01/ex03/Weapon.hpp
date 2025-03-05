@@ -6,14 +6,12 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 17:21:16 by amarouf           #+#    #+#             */
-/*   Updated: 2024/12/15 14:51:05 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/01/25 21:00:08 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
-// #include "HumanA.hpp"
-// #include "HumanB.hpp"
 
 class Weapon
 {
@@ -21,7 +19,7 @@ class Weapon
     std::string type;
     
     public:
-    Weapon(std::string type): type(type){};
+    Weapon(std::string str): type(str){};
     const std::string getType();
     void setType(std::string new_type);
 };

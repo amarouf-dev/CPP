@@ -6,64 +6,75 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 23:25:15 by amarouf           #+#    #+#             */
-/*   Updated: 2024/11/21 09:57:57 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/02/27 15:59:32 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-	int        	Contact::getIndex()
+	int Contact::getIndex()
 	{
-		return (this->index);
+		return (index);
 	}
 
 	std::string Contact::getFname()
 	{
-		return (this->f_name);
+		return (f_name);
 	}
 	
 	std::string Contact::getLname()
 	{
-		return (this->l_name);
+		return (l_name);
 	}
 	
 	std::string Contact::getNname()
 	{
-		return (this->n_name);
+		return (n_name);
 	}
 	std::string Contact::getPnumber()
 	{
-		return (this->p_number);
+		return (p_number);
 	}
 	std::string Contact::getSecret()
 	{
-        return (this->secret);
+        return (secret);
     }
 	
-	//Getters
 	void Contact::setFname(std::string set)
 	{
-		this->f_name = set;
+		f_name = set;
 	}
 	void Contact::setLname(std::string set)
 	{
-		this->l_name = set;
+		l_name = set;
 	}
 	void Contact::setNname(std::string set)
 	{
-		this->n_name = set;
+		n_name = set;
 	}
-	void Contact::setPnumber(std::string set)
+	bool Contact::setPnumber(std::string set)
 	{
-		this->p_number = set;
+		int i = 0;
+
+		while (set[i])
+		{
+			if (isdigit(set[i]) == 0)
+			{
+				std::cout << "\033[1;31mInvalid phone number!\033[0m" << std::endl;
+				return (false);
+			}
+			i ++;
+		}
+		p_number = set;
+		return (true);
 	}
 	void Contact::setSecret(std::string set)
 	{
-		this->secret = set;
+		secret = set;
 	}
 
 	void Contact::setIndex(int new_index)
 	{
-		this->index = new_index;
+		index = new_index;
 	}
 	
