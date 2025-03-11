@@ -6,11 +6,16 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 23:25:15 by amarouf           #+#    #+#             */
-/*   Updated: 2025/02/27 15:59:32 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/03/11 01:51:59 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
+
+	Contact::Contact()
+	{
+		index = 0;
+	}
 
 	int Contact::getIndex()
 	{

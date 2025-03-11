@@ -6,11 +6,16 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 23:25:20 by amarouf           #+#    #+#             */
-/*   Updated: 2025/03/05 13:27:09 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/03/11 02:22:02 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+
+PhoneBook::PhoneBook()
+{
+	index = 0;
+}
 
 bool contact_prompt(Contact *Contacts, int index)
 {

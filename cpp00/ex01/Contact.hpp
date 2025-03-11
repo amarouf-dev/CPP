@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 23:25:12 by amarouf           #+#    #+#             */
-/*   Updated: 2025/02/27 15:53:55 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/03/11 01:51:17 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Contact
     std::string secret;
     int         index;
     public:
-    Contact():index(0){};
+    Contact();
     std::string getFname();
     std::string getLname();
     std::string getNname();

@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 23:25:17 by amarouf           #+#    #+#             */
-/*   Updated: 2025/03/05 13:27:02 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/03/11 02:22:22 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class PhoneBook
         Contact Contacts[8];
         int     index;
     public:
-        PhoneBook(): index(0){};
+        PhoneBook();
         bool add_contact(PhoneBook *phone);
         bool search_contact(PhoneBook phone);
 };

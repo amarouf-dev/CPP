@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 11:51:22 by amarouf           #+#    #+#             */
-/*   Updated: 2024/12/13 15:21:01 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/03/10 21:49:43 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	Account::_totalNbWithdrawals;
 Account::Account( int initial_deposit ): _amount (initial_deposit) 
 {
 	_nbAccounts ++;
-	this->_accountIndex = _nbAccounts - 1;
+	_accountIndex = _nbAccounts - 1;
 	_totalAmount += _amount;
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex << ";";
@@ -48,6 +48,10 @@ int	Account::getNbWithdrawals( void )
 	return (_totalNbWithdrawals);
 }
 
+int		Account::checkAmount( void ) const
+{
+	return (_amount);
+}
 void	Account::displayAccountsInfos( void )
 {
 	_displayTimestamp();
@@ -95,10 +99,6 @@ bool	Account::makeWithdrawal( int withdrawal )
 	return (true);
 }
 
-int		Account::checkAmount( void ) const
-{
-	return (_amount);
-}
 
 void	Account::displayStatus( void ) const
 {
@@ -112,7 +112,9 @@ void	Account::displayStatus( void ) const
 void	Account::_displayTimestamp( void )
 {
 	std::time_t cur_time = time(0);
-	std::cout << '[' << cur_time << "] ";
+	tm *times = localtime(&cur_time);
+	std::cout << '[' << times->tm_year + 1900 << times->tm_mon + 1 << times->tm_mday
+		<< "_" << times->tm_hour << times->tm_min << times->tm_sec << "] ";
 }
 
 Account::~Account( void )
