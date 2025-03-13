@@ -1,16 +1,19 @@
-NAME = Brain
+NAME = Zombie
 CPP = c++
-Cflags = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
+Cflags = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
-SRC = main.cpp\
+SRC = main.cpp \
 
 OSRC = $(SRC:.cpp=.o)
 
 all:$(NAME)
 
 $(NAME): $(OSRC)
-	$(CPP) $(Cflags) $(OSRC) -o $(NAME)
+	$(CPP) $(OSRC) -o $(NAME)
+
+%.o:%.cpp
+	$(CPP) $(Cflags) -c $< -o $@
 
 clean:
 	$(RM) $(OSRC)

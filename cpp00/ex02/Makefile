@@ -11,7 +11,10 @@ OSRC = $(SRC:.cpp=.o)
 all:$(NAME)
 
 $(NAME): $(OSRC)
-	$(CPP) $(Cflags) $(OSRC) -o $(NAME)
+	$(CPP) $(OSRC) -o $(NAME)
+
+%.o:%.cpp
+	$(CPP) $(Cflags) -c $< -o $@
 
 clean:
 	$(RM) $(OSRC)

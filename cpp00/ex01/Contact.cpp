@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 23:25:15 by amarouf           #+#    #+#             */
-/*   Updated: 2025/03/11 01:51:59 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/03/11 21:18:25 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,10 @@
 	{
 		index = 0;
 	}
-
 	int Contact::getIndex()
 	{
 		return (index);
 	}
-
 	std::string Contact::getFname()
 	{
 		return (f_name);
@@ -44,7 +42,6 @@
 	{
         return (secret);
     }
-	
 	void Contact::setFname(std::string set)
 	{
 		f_name = set;

@@ -5,20 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/23 17:21:01 by amarouf           #+#    #+#             */
-/*   Updated: 2025/01/25 21:00:46 by amarouf          ###   ########.fr       */
+/*   Created: 2025/03/13 01:41:49 by amarouf           #+#    #+#             */
+/*   Updated: 2025/03/13 02:18:49 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-
 #include "Weapon.hpp"
+
 class HumanA
 {
-    private:
-    std::string name;
-    Weapon& weapon_ref;
-    public:
-    HumanA(std::string new_name, Weapon new_weapon_ref): name(new_name),  weapon_ref(new_weapon_ref){};
-    void attack();
+	private:
+	Weapon wpn;
+	std::string name;
+	public:
+	void setWeapon(Weapon &new_wpn);
+	getWeapon();
+	setName();
+	getName();
+	HumanA(std::string new_name, Weapon new_wpn);
+	void attack(void);
 };

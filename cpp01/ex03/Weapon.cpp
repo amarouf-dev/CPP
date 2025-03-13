@@ -5,19 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/23 16:29:46 by amarouf           #+#    #+#             */
-/*   Updated: 2024/12/16 09:24:57 by amarouf          ###   ########.fr       */
+/*   Created: 2025/03/13 01:35:59 by amarouf           #+#    #+#             */
+/*   Updated: 2025/03/13 01:52:15 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
-void	Weapon::setType(std::string new_type)
+Weapon::Weapon(std::string new_type)
 {
-	this->type = new_type;
+    type = new_type;
 }
 
-const std::string	Weapon::getType()
+const std::string Weapon::getType(void)
 {
     return (type);
+}
+
+void Weapon::setType(std::string new_str)
+{
+    type = new_str;
 }

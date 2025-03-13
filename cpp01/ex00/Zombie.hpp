@@ -5,31 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 12:10:37 by amarouf           #+#    #+#             */
-/*   Updated: 2024/11/22 11:34:28 by amarouf          ###   ########.fr       */
+/*   Created: 2025/03/12 19:49:24 by amarouf           #+#    #+#             */
+/*   Updated: 2025/03/13 00:49:13 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#pragma once
 
-#include <iostream>
+#ifndef ZOMBIE_CPP
+#define ZOMBIE_CPP
+
+#include  <iostream>
+#include <stdlib.h>
 
 class Zombie
 {
     private:
     std::string name;
-
     public:
-    std::string getName();
-    void setName(std::string new_name);
-    void announce( void )
-    {
-        std::cout << name << ": BraiiiiiiinnnzzzZ...";
-    }
+    void setName(std::string name);
+    std::string getName(void);
+    void announce( void );
+    ~Zombie();
 };
 
-void    randomChump( std::string name );
+void randomChump( std::string name );
 Zombie* newZombie( std::string name );
+
 
 #endif

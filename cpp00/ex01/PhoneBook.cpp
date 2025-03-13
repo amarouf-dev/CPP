@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 23:25:20 by amarouf           #+#    #+#             */
-/*   Updated: 2025/03/11 02:22:02 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/03/11 21:33:59 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,22 @@ PhoneBook::PhoneBook()
 	index = 0;
 }
 
-bool contact_prompt(Contact *Contacts, int index)
+void PhoneBook::setContact(Contact Contact[8])
+{
+	for(int i = 0; i < 8; i ++)
+		Contact[i] = Contact[i];
+}
+Contact *PhoneBook::getContact(void)
+{
+	return (Contacts);
+}
+
+int PhoneBook::getIndex(void)
+{
+	return (index);
+}
+
+bool PhoneBook::contact_prompt(Contact *Contacts)
 {
 	std::string nbr;
 	int rd;
@@ -52,7 +67,7 @@ bool contact_prompt(Contact *Contacts, int index)
 	return (true);
 }
 
-bool print_contact_info(Contact Contacts[8], int index)
+bool PhoneBook::print_contact_info()
 {
 	int i = 0;
 	int j;
@@ -80,19 +95,12 @@ bool print_contact_info(Contact Contacts[8], int index)
 		std::cout << "\033[1;31mNo Contacts to display !\n\033[0m";
 		return (true);
 	}
-	if (contact_prompt(Contacts, index) == false)
+	if (contact_prompt(Contacts) == false)
 		return (false);
 	return (true);
 }
 
-bool PhoneBook::search_contact(PhoneBook phone)
-{
-	if (print_contact_info(phone.Contacts, phone.index) == false)
-		return (false);
-	return (true);
-}
-
-bool PhoneBook::add_contact(PhoneBook *phone)
+bool PhoneBook::add_contact(void)
 {
 	std::string rd;
 
@@ -104,7 +112,7 @@ bool PhoneBook::add_contact(PhoneBook *phone)
 		else
 			return (false);
 	}
-	phone->Contacts[phone->index].setFname(rd);
+	Contacts[index].setFname(rd);
 	std::cout << "\033[1mLast Name: \033[0m";
 	if (!std::getline(std::cin, rd) || rd == "")
 	{
@@ -113,7 +121,7 @@ bool PhoneBook::add_contact(PhoneBook *phone)
 		else
 			return (false);
 	}
-	phone->Contacts[phone->index].setLname(rd);
+	Contacts[index].setLname(rd);
 	std::cout << "\033[1mNickName: \033[0m";
 	if (!std::getline(std::cin, rd) || rd == "")
 	{
@@ -122,7 +130,7 @@ bool PhoneBook::add_contact(PhoneBook *phone)
 		else
 			return (false);
 	}
-	phone->Contacts[phone->index].setNname(rd);
+	Contacts[index].setNname(rd);
 	std::cout << "\033[1mPhone Number: \033[0m";
 	if (!std::getline(std::cin, rd) || rd == "")
 	{
@@ -131,7 +139,7 @@ bool PhoneBook::add_contact(PhoneBook *phone)
 		else
 			return (false);
 	}
-	if (phone->Contacts[phone->index].setPnumber(rd) == false)
+	if (Contacts[index].setPnumber(rd) == false)
 		return (false);
 	std::cout << "\033[1mDarckest Secret: \033[0m";
 	if (!std::getline(std::cin, rd) || rd == "")
@@ -141,63 +149,9 @@ bool PhoneBook::add_contact(PhoneBook *phone)
 		else
 			return (false);
 	}
-	phone->Contacts[phone->index].setSecret(rd);
-	phone->Contacts[phone->index].setIndex(phone->index + 1);
-	phone->index ++;
-	if (phone->index == 8) phone->index = 0;
+	Contacts[index].setSecret(rd);
+	Contacts[index].setIndex(index + 1);
+	index ++;
+	if (index == 8) index = 0;
 	return (true);
-}
-
-int  _menu()
-{
-	PhoneBook phone;
-	std::string command;
-
-	while (true)
-	{
-		std::cout << "===============MENU===============\n";
-		std::cout << "= OPTIONS:                       =\n";
-		std::cout << "= 1- ADD                         =\n";
-		std::cout << "= 2- SEARCH                      =\n";
-		std::cout << "= 3- EXIT                        =\n";
-		std::cout << "==================================\n";
-		std::cout << "->Enter a Command: ";
-		if (!std::getline(std::cin, command))
-		{
-			if (std::cin.eof())
-				return (1);
-			continue;
-		}
-		if (command == "add" || command == "ADD")
-		{
-			std::cout << "\033[1m-Add a contact:\033[0m\n";
-			if (phone.add_contact(&phone) == true)
-			{
-				std::cout << "\033[1;32mContact added successfully!\033[0m\n";
-				continue;
-			}
-			else
-			{
-				std::cout << "\033[1;31mContact not added!\033[0m\n";
-				continue;
-			}
-		}
-		else if (command == "search" || command == "SEARCH")
-		{
-			if (phone.search_contact(phone) == false)
-				continue;
-		}
-		else if (command == "exit" || command == "EXIT")
-		{
-			std::cout << "\033[1;31mExit!\n\033[0m";
-			return (0);
-		}
-		else
-			std::cout << "\033[1;31mInvalid Command!\033[0m\n";
-	}
-}
-
-int main()
-{
-	return (_menu());
 }

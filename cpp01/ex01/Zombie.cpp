@@ -5,19 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/22 11:49:38 by amarouf           #+#    #+#             */
-/*   Updated: 2024/11/22 12:00:17 by amarouf          ###   ########.fr       */
+/*   Created: 2025/03/12 19:49:21 by amarouf           #+#    #+#             */
+/*   Updated: 2025/03/13 01:07:40 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-std::string Zombie::getName()
-{
-    return (this->name);
-}
-
 void Zombie::setName(std::string new_name)
 {
-    this->name = new_name;
+	name = new_name;
+}
+
+std::string Zombie::getName(void)
+{
+	return (name);
+}
+
+void Zombie::announce( void )
+{
+	std::cout << name;
+	std::cout << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
+
+Zombie::~Zombie()
+{
+	std::cout << name;
+	std::cout << " Dies !" << std::endl;
 }

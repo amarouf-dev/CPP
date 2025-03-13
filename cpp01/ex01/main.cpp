@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/22 11:49:23 by amarouf           #+#    #+#             */
-/*   Updated: 2024/11/22 14:41:34 by amarouf          ###   ########.fr       */
+/*   Created: 2025/03/13 01:03:26 by amarouf           #+#    #+#             */
+/*   Updated: 2025/03/13 01:17:59 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,9 @@
 
 int main ()
 {
-    int i = 0;
-    Zombie *horde;
-
-    horde = zombieHorde(5, "Zombie");
-    while (i < 5)
-    {
-        horde[i].announce();
-        std::cout << "\n" << std::endl;
-        delete &horde[i];
-        i++;
-    }
+    Zombie *z = zombieHorde(5, "Foo");
+    for(int i = 0; i < 5; i ++)
+        z[i].announce();
+    delete[] z;
+    
 }

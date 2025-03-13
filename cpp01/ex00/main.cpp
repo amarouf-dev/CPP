@@ -5,20 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/22 11:39:31 by amarouf           #+#    #+#             */
-/*   Updated: 2024/11/22 12:21:13 by amarouf          ###   ########.fr       */
+/*   Created: 2025/03/12 19:49:15 by amarouf           #+#    #+#             */
+/*   Updated: 2025/03/13 01:24:42 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main()
+int main ()
 {
-    Zombie *zombie;
-
-    zombie = newZombie("zombozo");
-    zombie->announce();
-    delete zombie;
-    std::cout << "\n";
-    randomChump("ZOMBOZO");
+    Zombie *z = newZombie("Foo");
+    z->announce();
+    delete z;
+    randomChump("Fii");
 }

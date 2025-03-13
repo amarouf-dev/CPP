@@ -5,23 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/23 16:29:39 by amarouf           #+#    #+#             */
-/*   Updated: 2024/12/13 18:08:27 by amarouf          ###   ########.fr       */
+/*   Created: 2025/03/13 01:49:32 by amarouf           #+#    #+#             */
+/*   Updated: 2025/03/13 01:54:13 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #pragma once
-
-#include "Weapon.hpp"
 #include "HumanB.hpp"
 
-void HumanB::attack()
+HumanB::HumanB(std::string new_name)
 {
-    std::cout << this->name << "attacks with their" << this->weapon->getType();
+    name = new_name;
 }
 
-void HumanB::setWeapon(Weapon new_weapon)
+void HumanB::attack(void)
 {
-    
-    this->weapon = &new_weapon;
+   std::cout << name;
+   std::cout << " attacks with their ";
+   std::cout << wpn.getType();
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 12:14:35 by amarouf           #+#    #+#             */
-/*   Updated: 2024/11/22 11:47:23 by amarouf          ###   ########.fr       */
+/*   Created: 2025/03/12 19:49:17 by amarouf           #+#    #+#             */
+/*   Updated: 2025/03/13 01:22:17 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 Zombie* newZombie( std::string name )
 {
-	Zombie *zombie = new Zombie;
-	zombie->setName(name);
-	return (zombie);
+   Zombie *zombie = new Zombie;
+   if (!zombie)
+      exit(1);
+   zombie->setName(name);
+   return (zombie);
 }

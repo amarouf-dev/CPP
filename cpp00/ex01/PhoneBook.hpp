@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 23:25:17 by amarouf           #+#    #+#             */
-/*   Updated: 2025/03/11 02:22:22 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/03/11 21:34:11 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,12 @@ class PhoneBook
         int     index;
     public:
         PhoneBook();
-        bool add_contact(PhoneBook *phone);
-        bool search_contact(PhoneBook phone);
+        void setContact(Contact Contacts[8]);
+        Contact *getContact(void);
+        int getIndex(void);
+        bool add_contact(void);
+        bool print_contact_info(void);
+        bool contact_prompt(Contact *Contacts);
 };
 
 void    fix_print(std::string str);

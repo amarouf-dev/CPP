@@ -3,7 +3,7 @@ CPP = c++
 Cflags = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
-SRC = PhoneBook.cpp Contact.cpp parsing.cpp\
+SRC = PhoneBook.cpp Contact.cpp parsing.cpp main.cpp \
 
 OSRC = $(SRC:.cpp=.o)
 
@@ -11,8 +11,10 @@ OSRC = $(SRC:.cpp=.o)
 all:$(NAME)
 
 $(NAME): $(OSRC)
-	$(CPP) $(Cflags) $(OSRC) -o $(NAME)
+	$(CPP) $(OSRC) -o $(NAME)
 
+%.o:%.cpp
+	$(CPP) $(Cflags) -c $< -o $@
 
 clean:
 	$(RM) $(OSRC)

@@ -5,11 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/23 16:29:44 by amarouf           #+#    #+#             */
-/*   Updated: 2024/12/11 09:34:41 by amarouf          ###   ########.fr       */
+/*   Created: 2025/03/13 01:36:02 by amarouf           #+#    #+#             */
+/*   Updated: 2025/03/13 01:51:01 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Weapon.hpp"
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
