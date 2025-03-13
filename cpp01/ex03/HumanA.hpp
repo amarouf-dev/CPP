@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 01:41:49 by amarouf           #+#    #+#             */
-/*   Updated: 2025/03/13 02:21:50 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/03/13 02:21:55 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class HumanA
 	void setWeapon(Weapon &new_wpn);
 	getWeapon();
 	setName();
-	getName();1
+	getName();
 	HumanA(std::string new_name, Weapon new_wpn);
 	void attack(void);
 };
