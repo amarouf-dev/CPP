@@ -5,14 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/19 23:25:17 by amarouf           #+#    #+#             */
-/*   Updated: 2025/03/11 21:34:11 by amarouf          ###   ########.fr       */
+/*   Created: 2025/03/21 13:21:27 by amarouf           #+#    #+#             */
+/*   Updated: 2025/03/21 19:46:10 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
 #include "Contact.hpp"
+
+#include <stdlib.h>
 
 class PhoneBook
 {
@@ -21,13 +23,12 @@ class PhoneBook
         int     index;
     public:
         PhoneBook();
-        void setContact(Contact Contacts[8]);
-        Contact *getContact(void);
-        int getIndex(void);
-        bool add_contact(void);
-        bool print_contact_info(void);
-        bool contact_prompt(Contact *Contacts);
+        bool setContact(void);
+        bool getContact(std::string str, std::string &buf);
+        bool SearchContact(void);
+        void FixPrint(std::string str);
+        bool ContactDisplay(void);
+        bool pars_number(std::string nbr);
 };
 
-void    fix_print(std::string str);
-bool    pars_number(std::string nbr);
+#endif

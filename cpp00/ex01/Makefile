@@ -3,7 +3,7 @@ CPP = c++
 Cflags = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
-SRC = PhoneBook.cpp Contact.cpp parsing.cpp main.cpp \
+SRC = PhoneBook.cpp Contact.cpp main.cpp \
 
 OSRC = $(SRC:.cpp=.o)
 
