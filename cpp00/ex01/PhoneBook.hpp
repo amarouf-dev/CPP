@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 13:21:27 by amarouf           #+#    #+#             */
-/*   Updated: 2025/03/21 19:46:10 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/04/07 09:00:34 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class PhoneBook
 {
     private:
         Contact Contacts[8];
-        int     index;
+        int     nb_contacts;
     public:
         PhoneBook();
         bool setContact(void);

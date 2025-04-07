@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 13:23:22 by amarouf           #+#    #+#             */
-/*   Updated: 2025/03/21 19:46:36 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/04/07 09:24:24 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 PhoneBook::PhoneBook()
 {
-	index = 0;
+	nb_contacts = 0;
 }
 
 bool PhoneBook::getContact(std::string str, std::string &buf)
@@ -34,6 +34,7 @@ bool PhoneBook::getContact(std::string str, std::string &buf)
 
 bool PhoneBook::setContact(void)
 {
+	static int index;
 	std::string rd;
 
 	while (!getContact("\033[1mFirst Name: \033[0m", rd));
@@ -55,6 +56,8 @@ bool PhoneBook::setContact(void)
 	Contacts[index].setSecret(rd);
 	Contacts[index].setIndex(index + 1);
 	index ++;
+	if (nb_contacts < 8)
+		nb_contacts ++;
 	if (index == 8) index = 0;
 	return (true);
 }
@@ -104,7 +107,7 @@ bool PhoneBook::ContactDisplay(void)
 	}
 	else
 		rd = std::atoi(nbr.c_str());
-	if (rd > index)
+	if (rd > nb_contacts)
 	{
 		std::cout << "\033[1;31mInvalid Index !\n\033[0m";
 		return false;
