@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 13:23:22 by amarouf           #+#    #+#             */
-/*   Updated: 2025/04/07 09:24:24 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/04/07 10:16:25 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,12 @@ void	PhoneBook::FixPrint(std::string str)
 
 bool PhoneBook::pars_number(std::string nbr)
 {
+	int i = 0;
+	if (nbr[i] == '+')
+		i ++;
+	while (nbr[i] == '0')
+		i ++;
+	nbr.erase(0, i);
 	if (nbr.length() != 1)
 		return false;
 	if (nbr[0] <= '0' || nbr[0] > '8')
@@ -100,24 +106,26 @@ bool PhoneBook::ContactDisplay(void)
 	int rd;
 
 	while (!getContact("\033[1mEnter the index of a contact: \033[0m", nbr));
-	if (!pars_number(nbr))
+	while (true)
 	{
-		std::cout << "\033[1;31mInvalid Index !\n\033[0m";
-		return true;
-	}
-	else
-		rd = std::atoi(nbr.c_str());
-	if (rd > nb_contacts)
-	{
-		std::cout << "\033[1;31mInvalid Index !\n\033[0m";
-		return false;
+		if (!pars_number(nbr))
+			std::cout << "\033[1;31mInvalid Index !\n\033[0m";
+		else
+		{
+			rd = std::atoi(nbr.c_str());
+			if (rd > nb_contacts)
+				std::cout << "\033[1;31mInvalid Index !\n\033[0m";
+			else
+				break;
+		}
+		getContact("\033[1mEnter the index of a contact: \033[0m", nbr);
 	}
 	rd --;
 	std::cout << "\033[1mFirst Name: \033[0m" << Contacts[rd].getFname() << "\n";
 	std::cout << "\033[1mLast Name: \033[0m" << Contacts[rd].getLname() << "\n";
 	std::cout << "\033[1mNickName: \033[0m" << Contacts[rd].getNname() << "\n";
 	std::cout << "\033[1mPhone Number: \033[0m" << Contacts[rd].getPnumber() << "\n";
-	std::cout << "\033[1mDarckest Secret: \033[0m" << Contacts[rd].getSecret() << "\n";
+	std::cout << "\033[1mDarkest Secret: \033[0m" << Contacts[rd].getSecret() << "\n";
 	return (true);
 }
 
