@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef WEAPON_HPP
+#define WEAPON_HPP
+
 #include <iostream>
 
 class Weapon
@@ -21,3 +24,5 @@ class Weapon
     const std::string getType(void);
     void setType(std::string new_str);
 };
+
+#endif

@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/13 01:35:59 by amarouf           #+#    #+#             */
-/*   Updated: 2025/03/13 01:52:15 by amarouf          ###   ########.fr       */
+/*   Created: 2025/04/09 20:10:10 by amarouf           #+#    #+#             */
+/*   Updated: 2025/04/09 20:10:28 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#include "Harl.hpp"
 
-Weapon::Weapon(std::string new_type) : type(new_type) {}
-// {
-//     type = new_type;
-// }
-
-const std::string Weapon::getType(void)
+int main()
 {
-    return (type);
-}
-
-void Weapon::setType(std::string new_str)
-{
-    type = new_str;
+    
 }

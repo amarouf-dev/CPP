@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   Replace.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/13 01:35:59 by amarouf           #+#    #+#             */
-/*   Updated: 2025/03/13 01:52:15 by amarouf          ###   ########.fr       */
+/*   Created: 2025/04/07 16:16:11 by amarouf           #+#    #+#             */
+/*   Updated: 2025/04/09 17:39:30 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#ifndef REPLACE_HPP
+#define REPLACE_HPP
 
-Weapon::Weapon(std::string new_type) : type(new_type) {}
-// {
-//     type = new_type;
-// }
+#include <iostream>
+#include <fstream>
 
-const std::string Weapon::getType(void)
-{
-    return (type);
-}
-
-void Weapon::setType(std::string new_str)
-{
-    type = new_str;
-}
+#endif

@@ -6,9 +6,12 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 01:41:49 by amarouf           #+#    #+#             */
-/*   Updated: 2025/03/13 02:28:49 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/04/09 19:56:42 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef HUMANA_HPP
+#define HUMANA_HPP
 
 #include "Weapon.hpp"
 
@@ -18,10 +21,8 @@ class HumanA
 	Weapon &wpn;
 	std::string name;
 	public:
-	void setWeapon(Weapon &new_wpn);
-	getWeapon();
-	setName();
-	getName();
-	HumanA(std::string new_name, Weapon new_wpn);
+	HumanA(std::string new_name, Weapon &new_wpn);
 	void attack(void);
 };
+
+#endif

@@ -12,15 +12,11 @@
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string new_name, Weapon new_wpn)
-{
-    name = new_name;
-    wpn = new_wpn;
-}
+HumanA::HumanA(std::string new_name, Weapon &new_wpn) : wpn(new_wpn), name(new_name){}
 
 void HumanA::attack(void)
 {
    std::cout << name;
    std::cout << " attacks with their ";
-   std::cout << wpn.getType();
+   std::cout << wpn.getType() << std::endl;
 }

@@ -6,18 +6,24 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 01:48:52 by amarouf           #+#    #+#             */
-/*   Updated: 2025/03/13 01:53:48 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/04/09 20:02:46 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef HUMANB_HPP
+#define HUMANB_HPP
 
 #include "Weapon.hpp"
 
 class HumanB
 {
 	private:
-	Weapon wpn;
+	Weapon *wpn;
 	std::string name;
 	public:
     HumanB(std::string new_name);
+	void setWeapon(Weapon &new_wpn);
 	void attack(void);
 };
+
+#endif
