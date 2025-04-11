@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 19:49:28 by amarouf           #+#    #+#             */
-/*   Updated: 2025/03/13 00:47:28 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/04/10 17:15:44 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void randomChump( std::string name )
 {
-   Zombie *z = newZombie(name);
-   z->announce();
-   delete z;
+   Zombie z;
+   z.setName(name);
+   z.announce();
 }

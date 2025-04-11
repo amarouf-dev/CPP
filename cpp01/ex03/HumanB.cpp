@@ -6,11 +6,13 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 01:49:32 by amarouf           #+#    #+#             */
-/*   Updated: 2025/04/09 20:02:36 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/04/10 17:36:57 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
+
+HumanB::HumanB() : name("default"){}
 
 HumanB::HumanB(std::string new_name) : name(new_name){}
 

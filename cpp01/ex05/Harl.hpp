@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 20:09:08 by amarouf           #+#    #+#             */
-/*   Updated: 2025/04/09 20:10:05 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/04/10 15:54:51 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,16 @@
 #define HARL_CPP
 
 #include <iostream>
+
+class Harl
+{
+	private:
+	void debug( void );
+	void info( void );
+	void warning( void );
+	void error( void );
+	public:
+	void complain( std::string level );
+};
 
 #endif

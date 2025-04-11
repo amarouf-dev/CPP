@@ -9,7 +9,7 @@ OSRC = $(SRC:.cpp=.o)
 
 all:$(NAME)
 
-$(NAME): $(OSRC)
+$(NAME): $(OSRC) Zombie.hpp
 	$(CPP) $(OSRC) -o $(NAME)
 
 %.o:%.cpp

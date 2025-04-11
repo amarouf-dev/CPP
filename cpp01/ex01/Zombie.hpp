@@ -6,11 +6,9 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 19:49:24 by amarouf           #+#    #+#             */
-/*   Updated: 2025/03/13 01:07:07 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/04/10 15:55:07 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#pragma once
 
 #ifndef ZOMBIE_CPP
 #define ZOMBIE_CPP

@@ -5,11 +5,13 @@ RM = rm -rf
 
 SRC = HumanA.cpp  HumanB.cpp  main.cpp  Weapon.cpp \
 
+HDR = HumanA.hpp HumanB.hpp Weapon.hpp \
+
 OSRC = $(SRC:.cpp=.o)
 
 all:$(NAME)
 
-$(NAME): $(OSRC)
+$(NAME): $(OSRC) $(HDR)
 	$(CPP) $(OSRC) -o $(NAME)
 
 %.o:%.cpp

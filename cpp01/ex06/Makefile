@@ -1,15 +1,15 @@
-NAME = Zombie
+NAME = harlFilter
 CPP = c++
 Cflags = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
-SRC = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp \
+SRC = main.cpp Harl.cpp\
 
 OSRC = $(SRC:.cpp=.o)
 
 all:$(NAME)
 
-$(NAME): $(OSRC) Zombie.hpp
+$(NAME): $(OSRC) Harl.hpp
 	$(CPP) $(OSRC) -o $(NAME)
 
 %.o:%.cpp
