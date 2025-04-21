@@ -6,19 +6,26 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 21:50:02 by amarouf           #+#    #+#             */
-/*   Updated: 2025/04/19 21:20:41 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/04/21 17:34:18 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
 int main ()
 {
-    ClapTrap a;
-    ClapTrap b("Player1");
-    ClapTrap s;
-    s = b;
+    // ScavTrap a("Abdo");
+    // a.attack("Hello");
+    // ScavTrap b(a);
+    // b.guardGate();
+    // ClapTrap s;
+    // s.attack("NAME");
 
-    a.attack("Player1");
-    b.takeDamage(10);
+    FragTrap a("BEST NAME");
+
+    FragTrap b = a;
+
+    b.attack("Worst name");
+
+    
 }

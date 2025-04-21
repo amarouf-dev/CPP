@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 21:50:15 by amarouf           #+#    #+#             */
-/*   Updated: 2025/04/19 15:50:19 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/04/20 16:41:34 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 class ClapTrap
 {
-    private:
+    protected:
     std::string Name;
     int Hit_points;
     int Energy_points;
