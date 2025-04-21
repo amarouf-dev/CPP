@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/16 21:50:02 by amarouf           #+#    #+#             */
-/*   Updated: 2025/04/21 17:38:11 by amarouf          ###   ########.fr       */
+/*   Created: 2025/04/21 17:17:22 by amarouf           #+#    #+#             */
+/*   Updated: 2025/04/21 18:45:50 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#pragma once
 
-int main ()
+#include "ScavTrap.hpp"
+
+class FragTrap: public ClapTrap
 {
-    // ScavTrap a("Abdo");
-    // a.attack("Hello");
-    // ScavTrap b(a);
-    // b.guardGate();
-    // ClapTrap s;
-    // s.attack("NAME");
-
-    FragTrap a("BEST NAME");
-
-    FragTrap b(a);
-
-    b.attack("Worst name");
-
-    
-}
+    public:
+    FragTrap();
+    FragTrap(std::string);
+    FragTrap(const FragTrap&);
+    FragTrap& operator= (const FragTrap&);
+    ~FragTrap();
+    void highFivesGuys(void);
+};

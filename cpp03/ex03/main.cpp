@@ -6,11 +6,11 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 21:50:02 by amarouf           #+#    #+#             */
-/*   Updated: 2025/04/21 17:38:11 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/04/21 18:59:34 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main ()
 {
@@ -21,11 +21,17 @@ int main ()
     // ClapTrap s;
     // s.attack("NAME");
 
-    FragTrap a("BEST NAME");
+    // FragTrap a("BEST NAME");
 
-    FragTrap b(a);
+    // FragTrap b(a);
 
-    b.attack("Worst name");
+    // b.attack("Worst name");
+
+    DiamondTrap a("Diamond NAME");
+
+    a.whoAmI();
+
+    // a.attack();
 
     
 }
