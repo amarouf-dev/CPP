@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 17:17:22 by amarouf           #+#    #+#             */
-/*   Updated: 2025/04/21 18:45:50 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/04/24 18:38:05 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include "ScavTrap.hpp"
 
-class FragTrap: public ClapTrap
+class FragTrap: virtual  public ClapTrap
 {
     public:
     FragTrap();

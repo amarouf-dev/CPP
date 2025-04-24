@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 21:26:15 by amarouf           #+#    #+#             */
-/*   Updated: 2025/04/21 17:14:25 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/04/24 18:34:50 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,5 @@ class ScavTrap : public ClapTrap
     ScavTrap& operator=(const ScavTrap&);
     ~ScavTrap();
     void guardGate();
+    void attack(const std::string& target);
 };
