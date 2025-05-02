@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 09:32:39 by amarouf           #+#    #+#             */
-/*   Updated: 2025/04/23 17:49:08 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/05/02 18:41:34 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,21 @@
 
 int main()
 {
-    const Animal* j = new Dog();
-    std::cout << "|||||||||||||||||||||||||||||||||" << std::endl;
-    const Animal* i = new Cat();
-    std::cout << "|||||||||||||||||||||||||||||||||" << std::endl;
-    const Animal obj;
-    std::cout << "|||||||||||||||||ssssss||||||||||||||||" << std::endl;
-    delete j;
-    delete i;
-    return 0;
+    const Animal *i = new Cat();
+    const Animal *d = new Dog();
+
+    const Cat *C1 = new Cat();
+    const Cat *C2(C1);
+ 
+    std::cout << "\n\n\n\n\n";
+    i->makeSound();
+    d->makeSound();
+
+    C1->makeSound();
+    C2->makeSound();
+ 
+    std::cout << "\n\n\n\n\n";
+     delete i;
+     delete d;
+     return 0;
 }

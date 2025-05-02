@@ -6,12 +6,11 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 09:20:46 by amarouf           #+#    #+#             */
-/*   Updated: 2025/04/23 16:49:45 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/05/01 18:47:08 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
-
 
 Dog::Dog()
 {
@@ -24,7 +23,10 @@ Dog& Dog::operator=(const Dog& Dog1)
 {
     std::cout << "Dog's Parametrized Constructor\n";
     if (this != &Dog1)
+    {
+        this->Br = new Brain(*Dog1.Br);
         this->type = Dog1.type;
+    }
     return *this;
 }
 

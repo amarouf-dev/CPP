@@ -3,13 +3,13 @@ CPP = c++
 Cflags = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
-SRC = Animal.cpp  Cat.cpp  Dog.cpp  main.cpp \
+SRC = Animal.cpp  Cat.cpp  Dog.cpp  main.cpp WrongAnimal.cpp WrongCat.cpp\
 
 OSRC = $(SRC:.cpp=.o)
 
 all:$(NAME)
 
-$(NAME): $(OSRC) Animal.hpp  Cat.hpp  Dog.hpp
+$(NAME): $(OSRC) Animal.hpp  Cat.hpp  Dog.hpp WrongAnimal.hpp WrongCat.hpp
 		$(CPP) $(OSRC) -o $(NAME)
 
 %.o:%.cpp

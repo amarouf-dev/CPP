@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 16:45:22 by amarouf           #+#    #+#             */
-/*   Updated: 2025/04/23 17:41:52 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/04/30 13:29:35 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Brain& Brain::operator=(const Brain& Brain1)
     if (this != &Brain1)
     {
         for (int i = 0; i < 100; i ++)
-            this->ideas[i] =  Brain1.ideas[i];       
+            this->ideas[i] =  Brain1.ideas[i];  
     }
     return *this;
 }

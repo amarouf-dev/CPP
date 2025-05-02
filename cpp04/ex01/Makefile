@@ -3,7 +3,7 @@ CPP = c++
 Cflags = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
-SRC = Animal.cpp  Cat.cpp  Dog.cpp  main.cpp Brain.cpp\
+SRC = Animal.cpp  Cat.cpp  Dog.cpp  main.cpp Brain.cpp \
 
 OSRC = $(SRC:.cpp=.o)
 
