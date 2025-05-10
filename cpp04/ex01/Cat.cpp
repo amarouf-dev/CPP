@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 09:20:46 by amarouf           #+#    #+#             */
-/*   Updated: 2025/05/01 17:17:16 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/05/10 22:55:31 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 Cat::Cat()
 {
     this->type = "Cat";
-    Br = new  Brain();
     std::cout << "Cat's Default Constructor\n";
+    Br = new  Brain();
 }
 
 Cat& Cat::operator=(const Cat& Cat1)

@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 17:40:25 by amarouf           #+#    #+#             */
-/*   Updated: 2025/04/24 18:41:09 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/05/01 18:45:15 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,6 @@ DiamondTrap::~DiamondTrap()
 void DiamondTrap::whoAmI()
 {
     std::cout << "DiamondTrap's name: " << Name << std::endl;
-    std::cout << "ClapTrap's name: " << ScavTrap::Name << std::endl;;
+    std::cout << "ClapTrap's name: " << ScavTrap::Name << std::endl;
 }
 

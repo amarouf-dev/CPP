@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 21:50:02 by amarouf           #+#    #+#             */
-/*   Updated: 2025/04/21 17:15:58 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/04/25 16:07:23 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,7 @@
 
 int main ()
 {
-    ScavTrap a("Abdo");
+    ScavTrap a("nnnnnnn");
     a.attack("Hello");
-    ScavTrap b(a);
-    b.guardGate();
-    ClapTrap s;
-    s.attack("NAME");
     
 }

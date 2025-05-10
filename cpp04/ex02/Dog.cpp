@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 09:20:46 by amarouf           #+#    #+#             */
-/*   Updated: 2025/05/01 17:18:32 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/05/10 23:00:00 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 Dog::Dog()
 {
     this->type = "Dog";
-     Br = new  Brain();
     std::cout << "Dog's Default Constructor\n";
+     Br = new  Brain();
 }
 
 Dog& Dog::operator=(const Dog& Dog1)

@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 09:32:39 by amarouf           #+#    #+#             */
-/*   Updated: 2025/05/02 18:41:34 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/05/10 22:54:41 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,16 @@ int main()
 
     const Cat *C1 = new Cat();
     const Cat *C2(C1);
+
+    Dog basic;
+    {
+        Dog tmp = basic;
+    }
+
+    Cat basicc;
+    {
+        Cat tmp = basicc;
+    }
  
     std::cout << "\n\n\n\n\n";
     i->makeSound();
