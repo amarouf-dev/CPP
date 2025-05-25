@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 15:53:21 by amarouf           #+#    #+#             */
-/*   Updated: 2025/05/25 23:22:26 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/05/25 23:29:39 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& B)
     return (*this);
 }
 
-std::ostream& operator<< (std::ostream &out, Bureaucrat Bc)
+std::ostream& operator<< (std::ostream &out, Bureaucrat &Bc)
 {
-    out << Bc.getName() << ", bureaucrat grade " << Bc.getGrade();
+    out << Bc.getName() << ", bureaucrat grade " << Bc.getGrade() << std::endl;
     return (out);
 }
 
