@@ -6,12 +6,11 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 15:53:21 by amarouf           #+#    #+#             */
-/*   Updated: 2025/06/21 02:47:46 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/07/05 15:07:12 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(): _Name("Default"), _Grade(HIGHEST_GRADE){}
 

@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 23:32:33 by amarouf           #+#    #+#             */
-/*   Updated: 2025/06/21 02:48:39 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/07/05 15:24:16 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 Form::Form(): _name("Form"), is_signed(false), gradeToSign(15), gradeToExecute(20) {}
 
-Form::Form(std::string& Nname, const int& NgradeToSign, const int& NgradeToExecute): _name(Nname)
+Form::Form(std::string Nname, const int NgradeToSign, const int NgradeToExecute): _name(Nname)
 	, gradeToSign(NgradeToSign), gradeToExecute(NgradeToExecute)
 {
+	is_signed = false;
 	if (this->gradeToSign < 1)
 	{
         throw Form::GradeTooLowException();
@@ -50,12 +51,12 @@ Form& Form::operator=(const Form& Nform)
 
 // Exception classes
 
-const char* Bureaucrat::GradeTooHighException::what()  const throw()
+const char* Form::GradeTooHighException::what()  const throw()
 {
     return "Invalid Grade: Too High !\n";
 }
 
-const char* Bureaucrat::GradeTooLowException::what()  const throw()
+const char* Form::GradeTooLowException::what()  const throw()
 {
    return "Invalid Grade: Too Low !\n";
 }
@@ -97,7 +98,7 @@ std::ostream& operator<<(std::ostream& out, Form& f)
 	if (f.getIs_signed())
 		out << f.get_Name() << ", Form's grade To Execute " <<
 		f.getGradeToExecute() <<
-		", Form's grade To Sighn " <<
+		", Form's grade To Sign " <<
 		f.getGradeToSign() <<
 		", The Form is signed" << std::endl;
 	else

@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 23:32:36 by amarouf           #+#    #+#             */
-/*   Updated: 2025/06/21 02:47:00 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/07/05 15:24:08 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Form
     
     // Constractors
     Form();
-    Form(std::string&, bool&, const int&, const int&);
+    Form(std::string, const int, const int);
     Form(const Form&);
 
     Form& operator=(const Form&);
