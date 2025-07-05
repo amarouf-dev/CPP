@@ -1,11 +1,11 @@
-NAME = Animal
+NAME =  Form
 CPP = c++
 Cflags = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
-HDR = Animal.hpp  Cat.hpp  Dog.hpp Brain.hpp \
+HDR = Bureaucrat.hpp Form.hpp\
 
-SRC = Animal.cpp  Cat.cpp  Dog.cpp  main.cpp Brain.cpp \
+SRC = main.cpp Bureaucrat.cpp Form.cpp \
 
 OSRC = $(SRC:.cpp=.o)
 

@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 09:20:46 by amarouf           #+#    #+#             */
-/*   Updated: 2025/05/10 23:02:47 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/05/13 08:32:12 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,23 @@ Dog::Dog()
      Br = new  Brain();
 }
 
-Dog& Dog::operator=(const Dog& Dog1)
-{
-    std::cout << "Dog's Parametrized Constructor\n";
-    if (this != &Dog1)
-    {    
-        this->Br = new Brain(*Dog1.Br);
-        this->type = Dog1.type;
-    }
-    return *this;
-}
-
 Dog::Dog(const Dog& Dog1)
 {
     std::cout << "Dog's Copy Constructor\n";
-    *this = Dog1;
+    this->type = Dog1.type;
+    this->Br = new Brain(*Dog1.Br);
+}
+
+Dog& Dog::operator=(const Dog& Dog1)
+{
+    std::cout << "Dog's Copy Assignment Operator\n";
+    if (this != &Dog1)
+    {    
+        delete this->Br;
+        Br = new Brain(*Dog1.Br);
+        this->type = Dog1.type;
+    }
+    return *this;
 }
 
 Dog::~Dog()

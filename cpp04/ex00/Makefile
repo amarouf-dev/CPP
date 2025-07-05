@@ -5,11 +5,13 @@ RM = rm -rf
 
 SRC = Animal.cpp  Cat.cpp  Dog.cpp  main.cpp WrongAnimal.cpp WrongCat.cpp\
 
+HDR = Animal.hpp  Cat.hpp  Dog.hpp WrongAnimal.hpp WrongCat.hpp \
+
 OSRC = $(SRC:.cpp=.o)
 
 all:$(NAME)
 
-$(NAME): $(OSRC) Animal.hpp  Cat.hpp  Dog.hpp WrongAnimal.hpp WrongCat.hpp
+$(NAME): $(OSRC) $(HDR)
 		$(CPP) $(OSRC) -o $(NAME)
 
 %.o:%.cpp

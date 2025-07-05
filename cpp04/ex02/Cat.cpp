@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 09:20:46 by amarouf           #+#    #+#             */
-/*   Updated: 2025/05/10 22:59:55 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/05/13 08:31:56 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,23 @@ Cat::Cat()
     Br = new  Brain();
 }
 
-Cat& Cat::operator=(const Cat& Cat1)
-{
-    std::cout << "Cat's Parametrized Constructor\n";
-    if (this != &Cat1)
-    {    
-        this->Br = new Brain(*Cat1.Br);
-        this->type = Cat1.type;
-    }
-    return *this;
-}
-
 Cat::Cat(const Cat& Cat1)
 {
     std::cout << "Cat's Copy Constructor\n";
-    *this = Cat1;
+    this->type = Cat1.type;
+    this->Br = new Brain(*Cat1.Br);
+}
+
+Cat& Cat::operator=(const Cat& Cat1)
+{
+    std::cout << "Cat's Copy Assignment Operator\n";
+    if (this != &Cat1)
+    {    
+        delete this->Br;
+        Br = new Brain(*Cat1.Br);
+        this->type = Cat1.type;
+    }
+    return *this;
 }
 
 Cat::~Cat()

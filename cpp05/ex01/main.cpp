@@ -6,10 +6,11 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 15:53:37 by amarouf           #+#    #+#             */
-/*   Updated: 2025/06/21 00:40:15 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/06/21 02:43:10 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Form.hpp"
 #include "Bureaucrat.hpp"
 
 int main ()
@@ -32,11 +33,6 @@ int main ()
     {
         std::cerr << e.what();
     }
-
     Bureaucrat a("Jemmy", 80);
-
     std::cout << a;
-
-
-    
 }

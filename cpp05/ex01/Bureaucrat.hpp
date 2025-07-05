@@ -6,16 +6,23 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 15:53:00 by amarouf           #+#    #+#             */
-/*   Updated: 2025/06/20 22:16:56 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/06/21 02:20:28 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
+#ifndef BUREAUCRAT_HPP
+#define BUREAUCRAT_HPP
+
 #include <iostream>
+#include "Form.hpp"
+
 
 #define LOWEST_GRADE 150
 #define HIGHEST_GRADE 1
+
+class Form;
 
 class Bureaucrat
 {
@@ -39,8 +46,8 @@ class Bureaucrat
     Bureaucrat();
     Bureaucrat(std::string, int);
     Bureaucrat(const Bureaucrat&);
-    ~Bureaucrat();
 
+    ~Bureaucrat();
     
     Bureaucrat& operator=(const Bureaucrat&);
     
@@ -49,7 +56,10 @@ class Bureaucrat
 
     void    GradeIncrement(int);
     void    GradeDecrement(int);
+
+    void signForm(Form&);
 };
 
 std::ostream& operator<< (std::ostream&, Bureaucrat&);
 
+#endif

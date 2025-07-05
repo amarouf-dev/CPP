@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 09:32:39 by amarouf           #+#    #+#             */
-/*   Updated: 2025/05/10 22:26:11 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/05/13 07:58:27 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main()
    const Animal *d = new Dog();
    const Animal b;
    const WrongAnimal *j = new WrongCat();
-    const WrongCat k;
+   const WrongCat k;
 
    std::cout << "\n\n\n\n\n";
    k.makeSound();

@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 09:09:34 by amarouf           #+#    #+#             */
-/*   Updated: 2025/04/23 09:46:29 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/05/13 08:39:07 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,18 @@ Animal::Animal(std::string New_type) : type(New_type)
     std::cout << "Animal's Parametrized Constructor\n";
 }
 
+Animal::Animal(const Animal& Animal1)
+{
+    std::cout << "Animal's Copy Constructor\n";
+    *this = Animal1;
+}
+
 Animal& Animal::operator=(const Animal& Animal1)
 {
     std::cout << "Animal's Copy assignment Operator\n";
     if (this != &Animal1)
         this->type = Animal1.type;
     return *this;
-}
-
-Animal::Animal(const Animal& Animal1)
-{
-    std::cout << "Animal's Copy Constructor\n";
-    *this = Animal1;
 }
 
 Animal::~Animal()
