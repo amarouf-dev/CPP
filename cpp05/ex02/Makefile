@@ -1,11 +1,12 @@
+
 NAME =  Form
 CPP = c++
 Cflags = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
-HDR = Bureaucrat.hpp Form.hpp\
+HDR = Bureaucrat.hpp Form.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp ShrubberyCreationForm.hpp \
 
-SRC = main.cpp Bureaucrat.cpp Form.cpp \
+SRC = main.cpp Bureaucrat.cpp Form.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp\
 
 OSRC = $(SRC:.cpp=.o)
 
