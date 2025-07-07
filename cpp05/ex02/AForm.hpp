@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -19,7 +19,7 @@
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
     private:
     
@@ -31,13 +31,13 @@ class Form
     public:
     
     // Constractors
-    Form();
-    Form(std::string, const int, const int);
-    Form(const Form&);
+    AForm();
+    AForm(std::string, const int, const int);
+    AForm(const AForm&);
 
-    Form& operator=(const Form&);
+    AForm& operator=(const AForm&);
 
-    ~Form();
+    ~AForm();
 
     // Exception classes
     
@@ -63,9 +63,11 @@ class Form
     // Methods
 
     void beSigned(Bureaucrat&);
+
+    virtual void execute(Bureaucrat const & executor) const = 0;
     
 };
 
-std::ostream& operator<<(std::ostream&, Form&);
+std::ostream& operator<<(std::ostream&, AForm&);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 15:53:00 by amarouf           #+#    #+#             */
-/*   Updated: 2025/06/20 22:16:56 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/07/07 03:53:20 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ class Bureaucrat
     
     Bureaucrat& operator=(const Bureaucrat&);
     
-    const std::string   getName(void);
-    int                 getGrade(void);
+    const std::string   getName(void) const;
+    int                 getGrade(void) const;
 
     void    GradeIncrement(int);
     void    GradeDecrement(int);

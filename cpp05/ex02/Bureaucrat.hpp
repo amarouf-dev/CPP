@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 15:53:00 by amarouf           #+#    #+#             */
-/*   Updated: 2025/07/05 15:16:01 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/07/07 03:53:41 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 #define BUREAUCRAT_HPP
 
 #include <iostream>
-#include "Form.hpp"
+#include "AForm.hpp"
 
 
 #define LOWEST_GRADE 150
 #define HIGHEST_GRADE 1
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -51,13 +51,13 @@ class Bureaucrat
     
     Bureaucrat& operator=(const Bureaucrat&);
     
-    const std::string   getName(void);
-    int                 getGrade(void);
+    const std::string   getName(void) const;
+    int                 getGrade(void) const;
 
     void    GradeIncrement(int);
     void    GradeDecrement(int);
 
-    void signForm(Form&);
+    void signForm(AForm&);
 };
 
 std::ostream& operator<< (std::ostream&, Bureaucrat&);

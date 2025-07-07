@@ -6,11 +6,11 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 15:53:37 by amarouf           #+#    #+#             */
-/*   Updated: 2025/07/06 19:26:13 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/07/07 03:10:33 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
 int main ()
@@ -56,27 +56,4 @@ int main ()
     Bureaucrat a("Jemmy", 5);
     std::cout << a;
 
-    try
-    {
-        Form F("FFF", 13, 12);
-        std::cout << F;
-        F.beSigned(a);
-        std::cout << F;
-    }
-    catch (std::exception& e)
-    {
-        std::cerr << e.what();
-    }
-
-
-    // Getters Test
-
-    std::cout << "\n\n\n FORM GETTERS TEST\n\n\n";
-
-    Form S("SSS", 1, 2);
-    
-    std::cout << "NAME: " << S.get_Name() << std::endl;
-    std::cout << "GradeToExecute: " << S.getGradeToExecute() << std::endl;
-    std::cout << "GradeToSign: " << S.getGradeToSign() << std::endl;
-    std::cout << "Is Signed: " << S.getIs_signed() << std::endl;
 }
