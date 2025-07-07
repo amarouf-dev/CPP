@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 23:32:33 by amarouf           #+#    #+#             */
-/*   Updated: 2025/07/07 02:51:42 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/07/07 23:20:01 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,23 @@ void AForm::beSigned(Bureaucrat& br)
 		this->is_signed = true;
 	else
 		throw AForm::GradeTooLowException();
+}
+
+void AForm::execute(Bureaucrat const & executor) const
+{
+	try
+	{
+		if (getIs_signed() && executor.getGrade() <= getGradeToExecute())
+		{
+			doExecute();
+		}
+		else
+			throw GradeTooLowException();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 }
 
 std::ostream& operator<<(std::ostream& out, AForm& f)

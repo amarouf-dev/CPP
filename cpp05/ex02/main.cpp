@@ -6,12 +6,13 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 15:53:37 by amarouf           #+#    #+#             */
-/*   Updated: 2025/07/07 03:10:33 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/07/07 23:00:56 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main ()
 {
@@ -55,5 +56,9 @@ int main ()
     
     Bureaucrat a("Jemmy", 5);
     std::cout << a;
+
+    ShrubberyCreationForm sh;
+
+    sh.execute(a);
 
 }

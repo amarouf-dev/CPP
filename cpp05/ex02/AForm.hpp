@@ -64,7 +64,9 @@ class AForm
 
     void beSigned(Bureaucrat&);
 
-    virtual void execute(Bureaucrat const & executor) const = 0;
+    void execute(Bureaucrat const & executor) const;
+
+    virtual void doExecute() const = 0;
     
 };
 

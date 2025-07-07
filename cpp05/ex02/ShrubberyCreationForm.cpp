@@ -6,12 +6,9 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 23:20:36 by amarouf           #+#    #+#             */
-/*   Updated: 2025/07/07 03:56:53 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/07/07 23:40:06 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#ifndef SCForm
-#define SCForm
 
 #include "ShrubberyCreationForm.hpp"
 
@@ -28,14 +25,20 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm& N
 {
 	if (this != &N)
 	{
+		AForm::operator=(N);
 		this->target = N.target;
 	}
 	return (*this);
 }
 
 
-void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
+void ShrubberyCreationForm::doExecute() const
 {
+	std::ofstream outf;
+
+	if (getGradeToExecute() != RequireExec && getGradeToSign() != RequiredSighn)
+		throw 
+
 	const char* THREE =
 "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢱⣸⠀⠀⠀⠀⠀⠀⠀⠀⡄⡄⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀\n"
 "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⢶⢠⠀⢀⡸⡄⠒⢺⠀⣸⣀⡀⣦⠽⠑⠁⠀⠀⠀⠀⠀⠀⠀⣆⣀⠗⠂⠀⠀⡆⢠⠃⡠⠜⠒⠀⠀⠀⠀⠀⠀\n"
@@ -76,11 +79,6 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠈⠡⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n";
 
 
-	if (getIs_signed() && executor.getGrade() < getGradeToExecute())
-	{
-		
-	}
-	std::ofstream outf;
 	
 	outf.open((this->target + "_shrubbery").c_str());
 	if (!outf)
@@ -89,10 +87,12 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 		return;
 	}
 	outf << THREE;
-		
+	if (!outf)
+	{
+		std::cerr << "Error writing in the file !\n";
+		return;
+	}
 	outf.close();
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
-
-#endif
