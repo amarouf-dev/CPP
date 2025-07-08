@@ -6,15 +6,15 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 23:20:36 by amarouf           #+#    #+#             */
-/*   Updated: 2025/07/07 23:40:06 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/07/08 01:45:00 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(): AForm::AForm("ShrubberyCreationForm", 18, 20), target("Default") {}
+ShrubberyCreationForm::ShrubberyCreationForm(): AForm::AForm("ShrubberyCreationForm", RequiredSighn, RequireExec), target("Default") {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string& new_target):AForm::AForm("ShrubberyCreationForm", 18, 20), target(new_target) {}
+ShrubberyCreationForm::ShrubberyCreationForm(std::string& new_target):AForm::AForm("ShrubberyCreationForm", RequiredSighn, RequireExec), target(new_target) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm& N)
 {
@@ -35,10 +35,6 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm& N
 void ShrubberyCreationForm::doExecute() const
 {
 	std::ofstream outf;
-
-	if (getGradeToExecute() != RequireExec && getGradeToSign() != RequiredSighn)
-		throw 
-
 	const char* THREE =
 "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢱⣸⠀⠀⠀⠀⠀⠀⠀⠀⡄⡄⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀\n"
 "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⢶⢠⠀⢀⡸⡄⠒⢺⠀⣸⣀⡀⣦⠽⠑⠁⠀⠀⠀⠀⠀⠀⠀⣆⣀⠗⠂⠀⠀⡆⢠⠃⡠⠜⠒⠀⠀⠀⠀⠀⠀\n"

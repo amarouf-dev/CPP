@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 15:53:00 by amarouf           #+#    #+#             */
-/*   Updated: 2025/07/07 03:53:41 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/07/08 01:35:32 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ class Bureaucrat
     void    GradeDecrement(int);
 
     void signForm(AForm&);
+
+    void executeForm(AForm const & form) const;
 };
 
 std::ostream& operator<< (std::ostream&, Bureaucrat&);

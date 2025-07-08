@@ -53,6 +53,12 @@ class AForm
             const char* what()  const throw();
     };
 
+    class FormNotSigned : public std::exception
+    {
+        public:
+            const char* what()  const throw();
+    };
+
     // Getters
 
     std::string get_Name(void) const;

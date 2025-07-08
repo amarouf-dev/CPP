@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 23:32:33 by amarouf           #+#    #+#             */
-/*   Updated: 2025/07/07 23:20:01 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/07/08 01:29:08 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,11 @@ const char* AForm::GradeTooLowException::what()  const throw()
    return "Invalid Grade: Too Low !\n";
 }
 
+const char* AForm::FormNotSigned::what()  const throw()
+{
+   return "Invalid Grade: Not Signed !\n";
+}
+
 // Getters
 
 std::string AForm::get_Name(void) const
@@ -97,12 +102,12 @@ void AForm::execute(Bureaucrat const & executor) const
 {
 	try
 	{
-		if (getIs_signed() && executor.getGrade() <= getGradeToExecute())
-		{
-			doExecute();
-		}
-		else
+		if (!getIs_signed())
+			throw AForm::FormNotSigned();
+		else if (executor.getGrade() <= getGradeToExecute())
 			throw GradeTooLowException();
+		else
+			doExecute();
 	}
 	catch(const std::exception& e)
 	{

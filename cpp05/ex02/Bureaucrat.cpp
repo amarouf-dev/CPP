@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 15:53:21 by amarouf           #+#    #+#             */
-/*   Updated: 2025/07/07 03:53:56 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/07/08 01:38:28 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,4 +90,14 @@ void Bureaucrat::signForm(AForm& f)
         std::cout << this->_Name << " couldn’t sign " << f.get_Name() << " because " << e.what();
     }
 }
+
+void Bureaucrat::executeForm(AForm const & form) const
+{
+    if (form.getGradeToExecute() < HIGHEST_GRADE)
+        throw GradeTooLowException();
+    if (form.getGradeToExecute() > LOWEST_GRADE)
+        throw GradeTooHighException();
+    std::cout << this->getName() <<  " executed " <<  form.get_Name() << std::endl;
+}
+
 
