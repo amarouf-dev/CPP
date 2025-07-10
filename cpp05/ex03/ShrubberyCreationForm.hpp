@@ -33,7 +33,7 @@ class ShrubberyCreationForm : public AForm
 
     ShrubberyCreationForm& operator=(ShrubberyCreationForm&);
 
-    ~ShrubberyCreationForm();
+    virtual ~ShrubberyCreationForm();
 
     void doExecute() const;
 };

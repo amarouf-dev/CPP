@@ -35,7 +35,7 @@ class RobotomyRequestForm : public AForm
 
     RobotomyRequestForm& operator=(RobotomyRequestForm&);
 
-    ~RobotomyRequestForm();
+    virtual ~RobotomyRequestForm();
 
     void doExecute() const;
 };

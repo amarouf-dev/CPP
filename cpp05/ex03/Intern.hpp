@@ -14,17 +14,22 @@
 #define INTERN
 
 #include <iostream>
+#include "AForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 class Intern
 {
-    Intern();
-    Intern(Intern&);
+public:
+	Intern();
+	Intern(Intern&);
 
-    Intern& operator=(Intern&);
+	Intern& operator=(Intern&);
 
-    ~Intern();
+	~Intern();
 
-    void makeForm(std::string&, std::string&);
+	AForm *makeForm(std::string&, std::string&);
 };
 
 #endif

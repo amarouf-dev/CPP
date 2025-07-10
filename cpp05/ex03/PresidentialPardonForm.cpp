@@ -15,12 +15,11 @@
 PresidentialPardonForm::PresidentialPardonForm():
     AForm::AForm("PresidentialPardonForm", PRequiredSighn, PRequireExec), target("Default") {}
 
-PresidentialPardonForm::PresidentialPardonForm(std::string& new_target):
-    AForm::AForm("PresidentialPardonForm", PRequiredSighn, PRequireExec), target(new_target) {}
+PresidentialPardonForm::PresidentialPardonForm(std::string new_target):AForm("PresidentialPardonForm", PRequiredSighn, PRequireExec), target(new_target){}
 
-PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm& N)
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm& N) : AForm(N.get_Name(), N.getGradeToSign(), N.getGradeToExecute()), target(N.target)
 {
-	this->target = N.target;
+	*this = N;
 }
 
 PresidentialPardonForm& PresidentialPardonForm::operator=(PresidentialPardonForm& N)

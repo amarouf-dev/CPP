@@ -16,7 +16,7 @@ RobotomyRequestForm::RobotomyRequestForm(): AForm::AForm("RobotomyRequestForm", 
 
 RobotomyRequestForm::RobotomyRequestForm(std::string& new_target):AForm::AForm("RobotomyRequestForm", RRequiredSighn, RRequireExec), target(new_target) {}
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm& N)
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm& N) : AForm(N.get_Name(), N.getGradeToSign(), N.getGradeToExecute())
 {
 	this->target = N.target;
 }

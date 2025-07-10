@@ -16,7 +16,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(): AForm::AForm("ShrubberyCreationF
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string& new_target):AForm::AForm("ShrubberyCreationForm", RequiredSighn, RequireExec), target(new_target) {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm& N)
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm& N) : AForm(N.get_Name(), N.getGradeToSign(), N.getGradeToExecute())
 {
 	this->target = N.target;
 }

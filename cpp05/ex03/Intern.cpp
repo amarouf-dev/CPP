@@ -10,3 +10,47 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Intern.hpp"
+
+Intern::Intern(){}
+
+Intern::Intern(Intern& NewInter)
+{
+    (void)NewInter;
+}
+
+Intern& Intern::operator=(Intern& NewInter)
+{
+    (void)NewInter;
+    return (*this);
+}
+
+Intern::~Intern(){}
+
+AForm *Intern::makeForm(std::string& name, std::string& target)
+{
+    int i = 0;
+    std::string str[] = { "PresidentialPardonForm", "RobotomyRequestForm", "ShrubberyCreationForm"};
+
+    while (i < 3)
+    {
+        if (str[i] == name)
+            break;
+        i ++;
+    }
+    switch (i)
+    {
+    case 0:
+        std::cout << "Intern creates " << str[i];
+        return (new PresidentialPardonForm(target));
+    case 1:
+        std::cout << "Intern creates " << str[i];
+        return (new RobotomyRequestForm(target));
+    case 2:
+        std::cout << "Intern creates " << str[i];
+        return (new ShrubberyCreationForm(target));
+    default:
+        std::cout << "name doesn't match" << std::endl;
+        return (NULL);
+    }
+}

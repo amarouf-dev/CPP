@@ -37,7 +37,7 @@ class AForm
 
     AForm& operator=(const AForm&);
 
-    ~AForm();
+    virtual ~AForm();
 
     // Exception classes
     
