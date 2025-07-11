@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 08:18:20 by amarouf           #+#    #+#             */
-/*   Updated: 2025/07/08 08:18:21 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/07/11 17:54:31 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,13 @@ AForm *Intern::makeForm(std::string& name, std::string& target)
     switch (i)
     {
     case 0:
-        std::cout << "Intern creates " << str[i];
+        std::cout << "Intern creates " << str[i] << std::endl;
         return (new PresidentialPardonForm(target));
     case 1:
-        std::cout << "Intern creates " << str[i];
+        std::cout << "Intern creates " << str[i] << std::endl;
         return (new RobotomyRequestForm(target));
     case 2:
-        std::cout << "Intern creates " << str[i];
+        std::cout << "Intern creates " << str[i] << std::endl;
         return (new ShrubberyCreationForm(target));
     default:
         std::cout << "name doesn't match" << std::endl;
