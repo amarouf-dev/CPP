@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 15:53:21 by amarouf           #+#    #+#             */
-/*   Updated: 2025/06/21 00:32:13 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/07/11 17:58:49 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ Bureaucrat::Bureaucrat(): _Name("Default"),_Grade(HIGHEST_GRADE){}
 Bureaucrat::Bureaucrat(std::string name, int grade): _Name(name)
 {
     if (grade < HIGHEST_GRADE)
-        throw GradeTooLowException();
-    if (grade > LOWEST_GRADE)
         throw GradeTooHighException();
+    if (grade > LOWEST_GRADE)
+        throw GradeTooLowException();
     _Grade = grade;
 }
 
@@ -44,12 +44,12 @@ std::ostream& operator<< (std::ostream &out, Bureaucrat &Bc)
 
 const char* Bureaucrat::GradeTooHighException::what()  const throw()
 {
-    return "Grade Too High !\n";
+    return "Grade Too High !";
 }
 
 const char* Bureaucrat::GradeTooLowException::what()  const throw()
 {
-   return "Grade Too Low !\n";
+   return "Grade Too Low !";
 }
 
 const std::string Bureaucrat::getName(void)

@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 15:53:37 by amarouf           #+#    #+#             */
-/*   Updated: 2025/07/05 15:36:33 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/07/11 17:59:57 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main ()
     }
     catch (std::exception& e)
     {
-        std::cerr << e.what();
+        std::cerr << e.what() << std::endl;
     }
     
     
@@ -39,7 +39,7 @@ int main ()
     }
     catch (std::exception & e)
     {
-        std::cerr << e.what();
+        std::cerr << e.what() << std::endl;
     }
     try
     {
@@ -48,24 +48,24 @@ int main ()
     }
     catch (std::exception & e)
     {
-        std::cerr << e.what();
+        std::cerr << e.what() << std::endl;
     }
     
     std::cout << "\n\n\n";
     
     Bureaucrat a("Jemmy", 5);
-    std::cout << a;
+    std::cout << a  << std::endl;
 
     try
     {
         Form F("FFF", 13, 12);
-        std::cout << F;
+        std::cout << F << std::endl;
         F.beSigned(a);
-        std::cout << F;
+        std::cout << F << std::endl;
     }
     catch (std::exception& e)
     {
-        std::cerr << e.what();
+        std::cerr << e.what() << std::endl;
     }
 
 

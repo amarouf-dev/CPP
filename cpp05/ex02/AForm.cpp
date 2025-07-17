@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 23:32:33 by amarouf           #+#    #+#             */
-/*   Updated: 2025/07/08 01:29:08 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/07/11 17:59:07 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,19 @@ AForm::AForm(std::string Nname, const int NgradeToSign, const int NgradeToExecut
 	is_signed = false;
 	if (this->gradeToSign < 1)
 	{
-        throw AForm::GradeTooLowException();
+		throw AForm::GradeTooHighException();
 	}
     if (this->gradeToSign > 150)
     {
-	    throw AForm::GradeTooHighException();
+		throw AForm::GradeTooLowException();
 	}
 	if (this->gradeToExecute < 1)
     {
-	    throw AForm::GradeTooLowException();
+		throw AForm::GradeTooHighException();
 	}
     if (this->gradeToExecute > 150)
     {
-	    throw AForm::GradeTooHighException();
+		throw AForm::GradeTooLowException();
 	}
 }
 
@@ -53,17 +53,17 @@ AForm& AForm::operator=(const AForm& NAform)
 
 const char* AForm::GradeTooHighException::what()  const throw()
 {
-    return "Invalid Grade: Too High !\n";
+    return "Invalid Grade: Too High !";
 }
 
 const char* AForm::GradeTooLowException::what()  const throw()
 {
-   return "Invalid Grade: Too Low !\n";
+   return "Invalid Grade: Too Low !";
 }
 
 const char* AForm::FormNotSigned::what()  const throw()
 {
-   return "Invalid Grade: Not Signed !\n";
+   return "Invalid Grade: Not Signed !";
 }
 
 // Getters
@@ -105,7 +105,7 @@ void AForm::execute(Bureaucrat const & executor) const
 		if (!getIs_signed())
 			throw AForm::FormNotSigned();
 		else if (executor.getGrade() <= getGradeToExecute())
-			throw GradeTooLowException();
+			throw GradeTooHighException();
 		else
 			doExecute();
 	}

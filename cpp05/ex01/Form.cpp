@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 23:32:33 by amarouf           #+#    #+#             */
-/*   Updated: 2025/07/05 15:24:16 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/07/13 16:36:40 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,19 @@ Form::Form(std::string Nname, const int NgradeToSign, const int NgradeToExecute)
 	is_signed = false;
 	if (this->gradeToSign < 1)
 	{
-        throw Form::GradeTooLowException();
+		throw Form::GradeTooHighException();
 	}
     if (this->gradeToSign > 150)
     {
-	    throw Form::GradeTooHighException();
+		throw Form::GradeTooLowException();
 	}
 	if (this->gradeToExecute < 1)
     {
-	    throw Form::GradeTooLowException();
+		throw Form::GradeTooHighException();
 	}
     if (this->gradeToExecute > 150)
     {
-	    throw Form::GradeTooHighException();
+		throw Form::GradeTooLowException();
 	}
 }
 
@@ -49,19 +49,15 @@ Form& Form::operator=(const Form& Nform)
 	return *this;
 }
 
-// Exception classes
-
 const char* Form::GradeTooHighException::what()  const throw()
 {
-    return "Invalid Grade: Too High !\n";
+    return "Invalid Grade: Too High !";
 }
 
 const char* Form::GradeTooLowException::what()  const throw()
 {
-   return "Invalid Grade: Too Low !\n";
+   return "Invalid Grade: Too Low !";
 }
-
-// Getters
 
 std::string Form::get_Name(void) const
 {
@@ -83,7 +79,6 @@ int Form::getGradeToExecute(void) const
 	return (this->gradeToExecute);	
 }
 
-// Methods
 
 void Form::beSigned(Bureaucrat& br)
 {
