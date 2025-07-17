@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 08:38:29 by amarouf           #+#    #+#             */
-/*   Updated: 2025/07/14 12:05:04 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/07/17 09:54:41 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,29 @@
 #define SCALAR
 
 #include <iostream>
+#include <string>
 
 class ScalarConverter
 {
     private:
+    
+    void CheckDisplayChar(std::string);
+    
+    public:
     ScalarConverter();
     ScalarConverter(ScalarConverter&);
 
     ScalarConverter& operator=(ScalarConverter&);
     
-    class NotDisplayable
+    
+    ~ScalarConverter();
+    
+    // public:
+    class NotDisplayable : public std::exception
     {
         const char *what() const throw();
     };
-
-    ~ScalarConverter();
-
+    
     void convert(std::string);
 };
 
