@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 08:38:26 by amarouf           #+#    #+#             */
-/*   Updated: 2025/07/20 19:44:04 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/07/27 23:22:06 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,21 +42,24 @@ void ScalarConverter::convert(std::string str)
 	Type type;
 	try
 	{
-		if (str.empty())
-		{
-			throw std::invalid_argument("ERROR: Empty string!");
-		}
 		type = CheckType(str);
-		if (type == CHAR_TYPE)
-			std::cout << "ITS A CHARACTER\n";
-		if (type == INT_TYPE)
-			std::cout << "ITS A NUMBER\n";
-		if (type == FLOAT_TYPE)
-			std::cout << "ITS A FLOATING POINT\n";
-		if (type == DOUBLE_TYPE)
-			std::cout << "ITS A DOUBLE\n";
-		if (type == INVALID_TYPE)
-			std::cout << "ITS INVALID\n";
+		switch (type)
+		{
+			case INT_TYPE:
+				convert_int(str);
+				break;
+			case CHAR_TYPE:
+				convert_char(str);
+				break;
+			case FLOAT_TYPE:
+				convert_float(str);
+				break;
+			case DOUBLE_TYPE:
+				convert_double(str);
+				break;
+			default:
+				NoTypeFound();
+		}
 	}
 	catch(const std::exception& e)
 	{

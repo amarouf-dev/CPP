@@ -1,12 +1,12 @@
 
-NAME =  Scalar
+NAME =  convert
 CPP = c++
 Cflags = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
 HDR = ScalarConverter.hpp \
 
-SRC = ScalarConverter.cpp typecheckers.cpp main.cpp \
+SRC = ScalarConverter.cpp typecheckers.cpp main.cpp convert.cpp\
 
 OSRC = $(SRC:.cpp=.o)
 
