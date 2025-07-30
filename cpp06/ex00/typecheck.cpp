@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   typecheckers.cpp                                   :+:      :+:    :+:   */
+/*   typecheck.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 11:22:26 by amarouf           #+#    #+#             */
-/*   Updated: 2025/07/27 23:18:36 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/07/30 15:59:27 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,15 @@ bool CheckInt(std::string str)
             return (false);
         i ++;
     }
-    
     return (true);
 }
 
-bool CheckDisplayChar(char c)
+void CheckDisplayChar(char c)
 {
-		if (c <= 15)
-			return (true);
-        return (false);
+    if (c <= 15)
+		std::cout << "char: " << "Non displayable" << std::endl;
+	else
+		std::cout << "char: \'" << c << '\'' << std::endl;
 }
 
 bool CheckChar(std::string str)

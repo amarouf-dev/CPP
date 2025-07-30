@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 05:37:14 by amarouf           #+#    #+#             */
-/*   Updated: 2025/07/27 23:22:21 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/07/30 16:15:38 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,91 +14,76 @@
 
 void convert_int(std::string str)
 {
-	char character;
-	int integer;
-	float floating_p;
-	double double_;
+	char c;
+	int i;
+	float f;
+	double d;
 
-	integer = std::atoi(str.c_str());
-	character = static_cast<char>(integer);
-	floating_p = static_cast<float>(integer);
-	double_ = static_cast<double>(integer);
+	i = std::atoi(str.c_str());
+	c = static_cast<char>(i);
+	f = static_cast<float>(i);
+	d = static_cast<double>(i);
 
-	if (CheckDisplayChar(character))
-		std::cout << "char: " << "Non displayable" << std::endl;
-	else
-		std::cout << "char: \'" << character << '\'' << std::endl;
-	std::cout << "int: " <<  integer << std::endl;
-	std::cout << "float: " << floating_p  << ".0f" << std::endl;
-	std::cout << "double: " << double_ << ".0" << std::endl;
+	CheckDisplayChar(c);
+	std::cout << "int: " <<  i << std::endl;
+	std::cout << "float: " << f  << ".0f" << std::endl;
+	std::cout << "double: " << d << ".0" << std::endl;
 }
 
 
 void convert_char(std::string str)
 {
-	char character;
-	int integer;
-	float floating_p;
-	double double_;
+	char c;
+	int i;
+	float f;
+	double d;
 
-	character = str[0];
-	integer = static_cast<int>(character);
-	floating_p = static_cast<float>(character);
-	double_ = static_cast<double>(character);
+	c = str[0];
+	i = static_cast<int>(c);
+	f = static_cast<float>(c);
+	d = static_cast<double>(c);
 
-	if (CheckDisplayChar(character))
-		std::cout << "char: " << "Non displayable" << std::endl;
-	else
-		std::cout << "char: \'" << character << '\'' << std::endl;
-
-	std::cout << "int: " <<  integer << std::endl;
-	std::cout << "float: " << floating_p  << ".0f" << std::endl;
-	std::cout << "double: " << double_ << ".0" << std::endl;
+	CheckDisplayChar(c);
+	std::cout << "int: " <<  i << std::endl;
+	std::cout << "float: " << f  << ".0f" << std::endl;
+	std::cout << "double: " << d << ".0" << std::endl;
 }
 
 
 void convert_float(std::string str)
 {
-	char character;
-	int integer;
-	float floating_p = 0.0;
-	double double_;
+	char c;
+	int i;
+	float f = 0.0;
+	double d;
 
-	floating_p = std::atof(str.c_str());
-	character = static_cast<char>(floating_p);
-	integer = static_cast<int>(floating_p);
-	double_ = static_cast<double>(floating_p);
+	f = std::atof(str.c_str());
+	c = static_cast<char>(f);
+	i = static_cast<int>(f);
+	d = static_cast<double>(f);
 
-	if (CheckDisplayChar(character))
-		std::cout << "char: " << "Non displayable" << std::endl;
-	else
-		std::cout << "char: \'" << character << '\'' << std::endl;
-
-	std::cout << "int: " <<  integer << std::endl;
-	std::cout << "float: " << floating_p << 'f' << std::endl;
-	std::cout << "double: " << double_ << std::endl;
+	CheckDisplayChar(c);
+	std::cout << "int: " <<  i << std::endl;
+	std::cout << "float: " << f << 'f' << std::endl;
+	std::cout << "double: " << d << std::endl;
 }
 
 void convert_double(std::string str)
 {
-	char character;
-	int integer;
-	float floating_p;
-	double double_ = 0.0;
+	char c;
+	int i;
+	float f;
+	double d = 0.0;
 
-	double_ = std::atof(str.c_str());
-	character = static_cast<char>(double_);
-	integer = static_cast<int>(double_);
-	floating_p = static_cast<float>(double_);
+	d = std::atof(str.c_str());
+	c = static_cast<char>(d);
+	i = static_cast<int>(d);
+	f = static_cast<float>(d);
 
-	if (CheckDisplayChar(character))
-		std::cout << "char: " << "Non displayable" << std::endl;
-	else
-		std::cout << "char: \'" << character << '\'' << std::endl;
-
-	std::cout << "int: " <<  integer << std::endl;
-	std::cout << "float: " << floating_p << 'f' << std::endl;
-	std::cout << "double: " << double_ << std::endl;
+	CheckDisplayChar(c);
+	std::cout << "int: " <<  i << std::endl;
+	std::cout << "float: " << f << 'f' << std::endl;
+	std::cout << "double: " << d << std::endl;
 }
 
 void NoTypeFound(void)

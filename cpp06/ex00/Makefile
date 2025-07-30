@@ -6,7 +6,7 @@ RM = rm -rf
 
 HDR = ScalarConverter.hpp \
 
-SRC = ScalarConverter.cpp typecheckers.cpp main.cpp convert.cpp\
+SRC = ScalarConverter.cpp typecheck.cpp main.cpp convert.cpp\
 
 OSRC = $(SRC:.cpp=.o)
 

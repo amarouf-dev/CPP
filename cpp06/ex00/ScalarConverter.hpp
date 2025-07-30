@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 08:38:29 by amarouf           #+#    #+#             */
-/*   Updated: 2025/07/27 23:22:00 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/07/30 16:08:14 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,14 @@ class ScalarConverter
     
     ScalarConverter& operator=(ScalarConverter&);
     
-    
     ~ScalarConverter();
-    
-    // public:
     
     void convert(std::string);
 };
 
 // Checkers
 
-bool CheckDisplayChar(char c);
+void CheckDisplayChar(char c);
 bool CheckChar(std::string);
 bool CheckInt(std::string);
 bool Checkfloat(std::string);
