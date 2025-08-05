@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 11:22:26 by amarouf           #+#    #+#             */
-/*   Updated: 2025/07/30 15:59:27 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/08/02 19:29:48 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ bool CheckInt(std::string str)
 		i ++;
     while (i < str.size())
     {
-        if (str[i] < '0' || str[i] > '9')
+        if (!std::isdigit(str[i]))
             return (false);
         i ++;
     }
@@ -28,7 +28,7 @@ bool CheckInt(std::string str)
 
 void CheckDisplayChar(char c)
 {
-    if (c <= 15)
+    if (!std::isprint(c))
 		std::cout << "char: " << "Non displayable" << std::endl;
 	else
 		std::cout << "char: \'" << c << '\'' << std::endl;
@@ -83,7 +83,7 @@ bool Checkdouble(std::string str)
             i ++;
         while (i < str.length())
         {
-            if (str[i] >= '0' && str[i] <= '9')
+            if (std::isdigit(str[i]))
                 i ++;
             else if (str[i] == '.' && dt == false)
             {
