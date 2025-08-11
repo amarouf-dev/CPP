@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/14 11:51:25 by amarouf           #+#    #+#             */
-/*   Updated: 2025/08/11 17:41:16 by amarouf          ###   ########.fr       */
+/*   Created: 2025/08/11 17:58:37 by amarouf           #+#    #+#             */
+/*   Updated: 2025/08/11 21:11:44 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include <iostream>
+#include <stdint.h>
 
-int main (int ac, char **av)
+class Serializer
 {
-	ScalarConverter a;
+    private:
 
-	if (ac != 2)
-	{
-		std::cerr << "Invalid number of argiments\n";
-		return 1;
-	}
-	a.convert(av[1]);
-}
+    public:
+    Serializer();
+    Serializer(Serializer&);
+    Serializer& operator=(Serializer&);
+
+    ~Serializer();
+
+    // Methods
+    uintptr_t serialize(Data* ptr);
+    Data* deserialize(uintptr_t raw);
+};

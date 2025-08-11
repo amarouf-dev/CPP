@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Data.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/14 11:51:25 by amarouf           #+#    #+#             */
-/*   Updated: 2025/08/11 17:41:16 by amarouf          ###   ########.fr       */
+/*   Created: 2025/08/11 21:17:12 by amarouf           #+#    #+#             */
+/*   Updated: 2025/08/11 21:18:10 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include "Data.hpp"
 
-int main (int ac, char **av)
+struct Data
 {
-	ScalarConverter a;
-
-	if (ac != 2)
-	{
-		std::cerr << "Invalid number of argiments\n";
-		return 1;
-	}
-	a.convert(av[1]);
-}
+    int a;
+};

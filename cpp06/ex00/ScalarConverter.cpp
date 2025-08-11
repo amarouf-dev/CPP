@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 08:38:26 by amarouf           #+#    #+#             */
-/*   Updated: 2025/08/02 19:33:23 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/08/11 17:46:40 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,12 @@ ScalarConverter::~ScalarConverter(){}
 
 Type ScalarConverter::CheckType(std::string str)
 {
-	if (CheckInt(str))
-		return (INT_TYPE);
+	if (str.size() > 19)
+		return (INVALID_TYPE);
 	else if (Checkfloat(str))
 		return (FLOAT_TYPE);
+	else if (CheckInt(str))
+		return (INT_TYPE);
 	else if (Checkdouble(str))
 		return (DOUBLE_TYPE);
 	else if (CheckChar(str))
@@ -58,7 +60,7 @@ void ScalarConverter::convert(std::string str)
 				convert_double(str);
 				break;
 			default:
-				NoTypeFound();
+				NoTypeFound(type);
 		}
 	}
 	catch(const std::exception& e)

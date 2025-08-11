@@ -1,25 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/14 11:51:25 by amarouf           #+#    #+#             */
-/*   Updated: 2025/08/11 17:41:16 by amarouf          ###   ########.fr       */
+/*   Created: 2025/08/11 21:16:26 by amarouf           #+#    #+#             */
+/*   Updated: 2025/08/11 21:17:04 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include "Serializer.hpp"
 
-int main (int ac, char **av)
-{
-	ScalarConverter a;
 
-	if (ac != 2)
-	{
-		std::cerr << "Invalid number of argiments\n";
-		return 1;
-	}
-	a.convert(av[1]);
-}
