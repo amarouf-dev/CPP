@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 16:35:27 by amarouf           #+#    #+#             */
-/*   Updated: 2025/08/12 17:41:48 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/08/13 00:37:46 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void identify(Base& p)
         std::cout << "The type of the object is : A\n";
         return ;
     }
-    catch (std::bad_cast)
+    catch (std::exception &e)
     {}
     
     try
@@ -63,7 +63,7 @@ void identify(Base& p)
         std::cout << "The type of the object is : B\n";
         return ;
     }
-    catch (std::bad_cast)
+    catch (std::exception &e)
     {}
     
     try
@@ -72,7 +72,7 @@ void identify(Base& p)
         std::cout << "The type of the object is : C\n";
         return ;
     }
-    catch (std::bad_cast)
+    catch (std::exception &e)
     {}
 }
 
