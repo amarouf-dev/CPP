@@ -1,37 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.cpp                                     :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/11 21:12:04 by amarouf           #+#    #+#             */
-/*   Updated: 2025/08/11 21:33:27 by amarouf          ###   ########.fr       */
+/*   Created: 2025/08/11 21:25:19 by amarouf           #+#    #+#             */
+/*   Updated: 2025/08/11 21:46:47 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Serializer.hpp"
 
-
-Serializer::Serializer() {}
-
-Serializer::Serializer(Serializer&) {}
-
-Serializer& Serializer::operator=(Serializer&)
+int main ()
 {
-    return (*this);
+    Serializer s;
+    Data d;
+    Data a(20, "wehfwe");
+
+    a = *s.deserialize(s.serialize(&d));
+    std::cout << a.age << std::endl;
+    std::cout << a.name << std::endl;
 }
-
-Serializer::~Serializer() {}
-
-
-uintptr_t Serializer::serialize(Data* ptr)
-{
-    return (reinterpret_cast<uintptr_t>(ptr));
-}
-
-Data* Serializer::deserialize(uintptr_t raw)
-{
-    return (reinterpret_cast<Data*>(raw));
-}
-

@@ -1,12 +1,11 @@
-
-NAME =  Serializer
+NAME =  Base
 CPP = c++
 Cflags = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
-HDR = Data.hpp Serializer.hpp \
+HDR = Base.hpp \
 
-SRC = main.cpp Data.cpp Serializer.cpp\
+SRC = main.cpp Base.cpp\
 
 OSRC = $(SRC:.cpp=.o)
 

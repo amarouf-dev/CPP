@@ -6,12 +6,13 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 17:58:37 by amarouf           #+#    #+#             */
-/*   Updated: 2025/08/11 21:11:44 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/08/11 21:26:12 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <stdint.h>
+#include "Data.hpp"
 
 class Serializer
 {

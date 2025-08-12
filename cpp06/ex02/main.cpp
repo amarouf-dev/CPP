@@ -1,37 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.cpp                                     :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/11 21:12:04 by amarouf           #+#    #+#             */
-/*   Updated: 2025/08/11 21:33:27 by amarouf          ###   ########.fr       */
+/*   Created: 2025/08/12 16:51:40 by amarouf           #+#    #+#             */
+/*   Updated: 2025/08/12 17:32:09 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serializer.hpp"
+#include "Base.hpp"
 
-
-Serializer::Serializer() {}
-
-Serializer::Serializer(Serializer&) {}
-
-Serializer& Serializer::operator=(Serializer&)
+int main ()
 {
-    return (*this);
+    {
+        Base *b;
+    
+        b = generate();
+        identify(b);
+    }
+
+    {
+        A a;
+        Base &b = a;
+        
+        identify(b);
+    }
+
+    {
+        B a;
+        Base &b = a;
+
+        identify(b);
+    }
+
+    {
+        C s;
+        Base &b = s;
+
+        identify(b);
+    }
 }
-
-Serializer::~Serializer() {}
-
-
-uintptr_t Serializer::serialize(Data* ptr)
-{
-    return (reinterpret_cast<uintptr_t>(ptr));
-}
-
-Data* Serializer::deserialize(uintptr_t raw)
-{
-    return (reinterpret_cast<Data*>(raw));
-}
-

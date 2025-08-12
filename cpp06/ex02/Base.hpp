@@ -1,37 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.cpp                                     :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/11 21:12:04 by amarouf           #+#    #+#             */
-/*   Updated: 2025/08/11 21:33:27 by amarouf          ###   ########.fr       */
+/*   Created: 2025/08/11 21:47:44 by amarouf           #+#    #+#             */
+/*   Updated: 2025/08/12 17:01:48 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serializer.hpp"
+#include <iostream>
+#include <time.h>
+#include <stdlib.h>
 
-
-Serializer::Serializer() {}
-
-Serializer::Serializer(Serializer&) {}
-
-Serializer& Serializer::operator=(Serializer&)
+class Base
 {
-    return (*this);
-}
+    public:
+    virtual ~Base();
+};
 
-Serializer::~Serializer() {}
-
-
-uintptr_t Serializer::serialize(Data* ptr)
+class A : public Base
 {
-    return (reinterpret_cast<uintptr_t>(ptr));
-}
+    public:
+    A();
+};
 
-Data* Serializer::deserialize(uintptr_t raw)
+class B : public Base
 {
-    return (reinterpret_cast<Data*>(raw));
-}
+    public:
+    B();
+};
 
+class C : public Base
+{
+    public:
+    C();
+};
+
+Base * generate(void);
+void identify(Base* p);
+void identify(Base& p);

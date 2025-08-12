@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.cpp                                     :+:      :+:    :+:   */
+/*   test.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/11 21:12:04 by amarouf           #+#    #+#             */
-/*   Updated: 2025/08/11 21:33:27 by amarouf          ###   ########.fr       */
+/*   Created: 2025/08/12 16:43:17 by amarouf           #+#    #+#             */
+/*   Updated: 2025/08/12 16:50:09 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serializer.hpp"
+#include <iostream>
 
-
-Serializer::Serializer() {}
-
-Serializer::Serializer(Serializer&) {}
-
-Serializer& Serializer::operator=(Serializer&)
+class S
 {
-    return (*this);
-}
+    public:
+    int s = 12;
+};
 
-Serializer::~Serializer() {}
-
-
-uintptr_t Serializer::serialize(Data* ptr)
+class M: public S
 {
-    return (reinterpret_cast<uintptr_t>(ptr));
-}
+    public:
+    int s = 13;
+};
 
-Data* Serializer::deserialize(uintptr_t raw)
+int main ()
 {
-    return (reinterpret_cast<Data*>(raw));
-}
+    S *s = new M();
 
+    std::cout << s->s << std::endl;
+}
