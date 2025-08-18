@@ -3,9 +3,9 @@ CPP = c++
 Cflags = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
-SRC = main.cpp span.cpp\
+SRC = main.cpp Span.cpp\
 
-HDR = span.hpp \
+HDR = Span.hpp \
 
 OSRC = $(SRC:.cpp=.o)
 
