@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 17:39:42 by abdellah          #+#    #+#             */
-/*   Updated: 2025/08/18 10:04:00 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/08/18 11:32:30 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 class Span
 {
@@ -25,11 +26,12 @@ class Span
     public:
     Span();  
     Span(unsigned int);
-    Span(Span&);
-    Span& operator=(Span&);
+    Span(const Span&);
+    Span& operator=(const Span&);
     ~Span();
     void addNumber(int);
-    std::vector<int> geTV(void);
+    int shortestSpan(void);
+    int longestSpan(void);
 };
 
 
