@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdellah <abdellah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/15 17:20:58 by abdellah          #+#    #+#             */
-/*   Updated: 2025/08/15 17:35:11 by abdellah         ###   ########.fr       */
+/*   Created: 2025/08/15 17:49:01 by abdellah          #+#    #+#             */
+/*   Updated: 2025/08/15 17:52:02 by abdellah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "easyfind.hpp"
+#include "Span.hpp"
 
-int main ()
+Span::Span(): size(1) {}
+
+Span::Span(unsigned int n): size(n) {}
+
+Span& Span::operator=(Span& s)
 {
-    std::vector<int> a;
-
-    a.push_back(12);
-    try
+    if (this != &s)
     {
-        easyfind(a, 1);
+        this->size = s.size;
     }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    
 }
+
+Span::Span(Span& s)
+{
+    s = *this;
+}
+

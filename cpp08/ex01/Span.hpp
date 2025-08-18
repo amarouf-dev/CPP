@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdellah <abdellah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/15 17:20:58 by abdellah          #+#    #+#             */
-/*   Updated: 2025/08/15 17:35:11 by abdellah         ###   ########.fr       */
+/*   Created: 2025/08/15 17:39:42 by abdellah          #+#    #+#             */
+/*   Updated: 2025/08/15 17:48:23 by abdellah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "easyfind.hpp"
+#ifndef SPAN__
+#define SPAN__
 
-int main ()
+#include <iostream>
+#include <vector>
+
+class Span
 {
-    std::vector<int> a;
-
-    a.push_back(12);
-    try
-    {
-        easyfind(a, 1);
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
+    private:
+    unsigned int size;
     
-}
+    public:
+    Span();  
+    Span(unsigned int);
+    Span(Span&);
+    Span& operator=(Span&);
+};
+
+
+#endif
