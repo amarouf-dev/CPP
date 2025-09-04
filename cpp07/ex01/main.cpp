@@ -6,26 +6,43 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 15:36:26 by amarouf           #+#    #+#             */
-/*   Updated: 2025/08/13 15:50:12 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/09/04 16:54:12 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "iter.hpp"
 
-void add_one(int &a)
+#include "iter.hpp"
+
+class Awesome
 {
-    a += 1;
+  public:
+    Awesome( void ) : _n( 42 ) { return; }
+    int get( void ) const { return this->_n; }
+  private:
+    int _n;
+};
+
+std::ostream & operator<<( std::ostream & o, Awesome const & rhs )
+{
+  o << rhs.get();
+  return o;
 }
 
-int main ()
+template< typename T >
+void print( T& x )
 {
-    int arr[5] = {1, 2, 3, 4, 5}; 
+  std::cout << x << std::endl;
+  return;
+}
 
-    iter(arr, 5, &add_one);
+int main() {
+  int tab[] = { 0, 1, 2, 3, 4 };
+  Awesome tab2[5];
 
-    for (int i = 0; i < 5; i ++)
-    {
-        std::cout << arr[i] << " " << std::endl;
-    }
+  iter( tab, 5, print<const int> );
+  iter( tab2, 5, print<Awesome> );
+
+  return 0;
 }
 
