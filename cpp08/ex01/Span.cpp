@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 17:49:01 by abdellah          #+#    #+#             */
-/*   Updated: 2025/08/18 11:41:10 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/08/20 00:43:46 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,24 @@ void Span::addNumber(int nbr)
 
 int Span::shortestSpan(void)
 {
-    int i = std::min_element(v.begin(), v.end())[0];
-    return (i);
+    int mins = 0;
+    int tmp = std::numeric_limits<int>::max();
+    std::sort(v.begin(), v.end());
+
+    for (std::vector<int>::iterator it = v.begin(); it + 1 != v.end(); ++it)
+    {
+        mins = *(it + 1) - *it;
+        if (mins < tmp)
+            tmp = mins;
+    }
+    return (tmp);
 }
 
 int Span::longestSpan(void)
 {
-    int i = std::max_element(v.begin(), v.end())[0];
-    return (i);
+    int max = std::max_element(v.begin(), v.end())[0];
+    int min = std::min_element(v.begin(), v.end())[0];
+    return (max - min);
 }
 
 

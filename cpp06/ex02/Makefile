@@ -9,7 +9,7 @@ SRC = main.cpp Base.cpp\
 
 OSRC = $(SRC:.cpp=.o)
 
-all:$(NAME)
+all: $(NAME)
 
 $(NAME): $(OSRC) $(HDR)
 		$(CPP) $(OSRC) -o $(NAME)

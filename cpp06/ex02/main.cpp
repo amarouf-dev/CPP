@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 16:51:40 by amarouf           #+#    #+#             */
-/*   Updated: 2025/08/13 00:39:04 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/08/28 03:48:28 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int main ()
     
         b = generate();
         identify(b);
+        delete b;
     }
 
     std::cout << "\n\n\n [Test] \n\n\n";

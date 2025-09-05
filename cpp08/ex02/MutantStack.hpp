@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Span.hpp                                           :+:      :+:    :+:   */
+/*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/15 17:39:42 by abdellah          #+#    #+#             */
-/*   Updated: 2025/08/19 23:13:03 by amarouf          ###   ########.fr       */
+/*   Created: 2025/08/25 17:55:36 by amarouf           #+#    #+#             */
+/*   Updated: 2025/08/25 18:02:00 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SPAN__
-#define SPAN__
+#ifndef MUTANT_
+#define MUTANT_
 
 #include <iostream>
-#include <vector>
-#include <algorithm>
-#include <limits>
+#include <stack>
 
-class Span
+template <typename T>
+class MutantStack : public std::stack<T>
 {
     private:
-    unsigned int size;
-    std::vector<int> v;
     
-    public:
-    Span();  
-    Span(unsigned int);
-    Span(const Span&);
-    Span& operator=(const Span&);
-    ~Span();
-    void addNumber(int);
-    int shortestSpan(void);
-    int longestSpan(void);
-};
+    
 
+    public:
+
+    MutantStack();  
+    MutantStack(MutantStack&);
+    MutantStack& operator=(MutantStack&);
+    ~MutantStack();
+};
 
 #endif

@@ -6,9 +6,12 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 17:58:37 by amarouf           #+#    #+#             */
-/*   Updated: 2025/08/11 21:26:12 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/08/28 17:27:59 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef SERIALIZER__
+#define SERIALIZER__
 
 #include <iostream>
 #include <stdint.h>
@@ -17,15 +20,16 @@
 class Serializer
 {
     private:
+    Serializer();
 
     public:
-    Serializer();
     Serializer(Serializer&);
     Serializer& operator=(Serializer&);
 
     ~Serializer();
 
-    // Methods
-    uintptr_t serialize(Data* ptr);
-    Data* deserialize(uintptr_t raw);
+    static uintptr_t serialize(Data* ptr);
+    static Data* deserialize(uintptr_t raw);
 };
+
+#endif

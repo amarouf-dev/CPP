@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 11:51:25 by amarouf           #+#    #+#             */
-/*   Updated: 2025/08/11 17:41:16 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/08/29 18:22:43 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 
 int main (int ac, char **av)
 {
-	ScalarConverter a;
-
 	if (ac != 2)
 	{
 		std::cerr << "Invalid number of argiments\n";
 		return 1;
 	}
-	a.convert(av[1]);
+	ScalarConverter::convert(av[1]);
 }

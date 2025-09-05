@@ -1,39 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Span.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/15 17:39:42 by abdellah          #+#    #+#             */
-/*   Updated: 2025/08/19 23:13:03 by amarouf          ###   ########.fr       */
+/*   Created: 2025/08/25 17:55:33 by amarouf           #+#    #+#             */
+/*   Updated: 2025/08/25 17:55:34 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SPAN__
-#define SPAN__
-
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <limits>
-
-class Span
-{
-    private:
-    unsigned int size;
-    std::vector<int> v;
-    
-    public:
-    Span();  
-    Span(unsigned int);
-    Span(const Span&);
-    Span& operator=(const Span&);
-    ~Span();
-    void addNumber(int);
-    int shortestSpan(void);
-    int longestSpan(void);
-};
-
-
-#endif

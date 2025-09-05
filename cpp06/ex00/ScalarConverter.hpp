@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 08:38:29 by amarouf           #+#    #+#             */
-/*   Updated: 2025/08/09 17:14:20 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/08/28 17:24:22 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,39 +30,37 @@ enum Type
     INVALID_TYPE,
     PINF_,
     NINF_,
-    OVF_,
-    DOVF_,
 };
 
 class ScalarConverter
 {
     private:
+    ScalarConverter();
     
     // Checkers
-    Type CheckType(std::string);
-    void CheckDisplayChar(char c);
-    bool CheckChar(std::string);
-    bool CheckInt(std::string);
-    bool Checkfloat(std::string);
-    bool Checkdouble(std::string);
+    static Type CheckType(std::string);
+    static void CheckDisplayChar(char c);
+    static bool CheckChar(std::string);
+    static bool CheckInt(std::string);
+    static bool Checkfloat(std::string);
+    static bool Checkdouble(std::string);
     
     // Converters
-    void convert_int(std::string);
-    void convert_char(std::string);
-    void convert_float(std::string);
-    void convert_double(std::string);
-    void NoTypeFound(Type);
+    static void convert_int(std::string);
+    static void convert_char(std::string);
+    static void convert_float(std::string);
+    static void convert_double(std::string);
+    static void NoTypeFound(Type);
 
     public:
 
-    ScalarConverter();
     ScalarConverter(ScalarConverter&);
     
     ScalarConverter& operator=(ScalarConverter&);
     
     ~ScalarConverter();
     
-    void convert(std::string);
+    static void convert(std::string);
 };
 
 #endif

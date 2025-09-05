@@ -6,13 +6,13 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 16:35:27 by amarouf           #+#    #+#             */
-/*   Updated: 2025/08/13 00:37:46 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/08/28 03:57:31 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Base.hpp"
 
-Base::~Base() {}
+Base::~Base(){}
 
 Base * generate(void)
 {
@@ -24,11 +24,11 @@ Base * generate(void)
     switch (s)
     {
         case 1:
-        return (new A());
+            return (new A());
         case 2:
-        return (new B());
+            return (new B());
         default:
-        return (new C());
+            return (new C());
     }
 }
 
@@ -74,21 +74,4 @@ void identify(Base& p)
     }
     catch (std::exception &e)
     {}
-}
-
-// Derived classes
-
-A::A()
-{
-    std::cout << "A is Created !\n";
-}
-
-B::B()
-{
-    std::cout << "B is Created !\n";
-}
-
-C::C()
-{
-    std::cout << "C is Created !\n";
 }

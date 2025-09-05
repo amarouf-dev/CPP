@@ -6,7 +6,7 @@
 /*   By: amarouf <amarouf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 08:38:26 by amarouf           #+#    #+#             */
-/*   Updated: 2025/08/11 17:46:40 by amarouf          ###   ########.fr       */
+/*   Updated: 2025/08/24 15:12:53 by amarouf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,6 @@ void ScalarConverter::convert(std::string str)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
 }

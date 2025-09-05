@@ -1,11 +1,11 @@
-NAME = Span
+NAME = btc
 CPP = c++
 Cflags = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
-SRC = main.cpp Span.cpp\
+SRC = main.cpp BitcoinExchange.cpp\
 
-HDR = Span.hpp \
+HDR = BitcoinExchange.hpp\
 
 OSRC = $(SRC:.cpp=.o)
 
@@ -15,13 +15,13 @@ $(NAME): $(OSRC) $(HDR)
 	$(CPP) $(OSRC) -o $(NAME)
 
 %.o:%.cpp
-		$(CPP) $(Cflags) -c $< -o $@
+				$(CPP) $(Cflags) -c $< -o $@
 
 clean:
-		$(RM) $(OSRC)
+				$(RM) $(OSRC)
 
 fclean:
-		$(RM) $(OSRC) $(NAME)
+				$(RM) $(OSRC) $(NAME)
 
 re: fclean all
 
