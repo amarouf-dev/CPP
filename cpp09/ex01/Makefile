@@ -1,11 +1,11 @@
-NAME = Easyfind
+NAME = RPN
 CPP = c++
 Cflags = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
-SRC = main.cpp \
+SRC = main.cpp RPN.cpp\
 
-HDR = easyfind.hpp \
+HDR = RPN.hpp\
 
 OSRC = $(SRC:.cpp=.o)
 
