@@ -13,16 +13,21 @@ class BitcoinExchange
 {
     private:
 
-    std::map<std::string, int> db;
+    std::map<std::string, float> db;
     void parsDB(std::string);
-    
+    void parsfile(std::string);
+	void CountResult(std::string, std::string);
+
     public:
     
     BitcoinExchange();
+    BitcoinExchange(BitcoinExchange&);
+
+    BitcoinExchange& operator=(BitcoinExchange&);
+
+    ~BitcoinExchange();
+
+    void ReadArgFile(std::string);
 };
-
-void ReadArgFile(std::string);
-void parsfile(std::string);
-
 
 #endif

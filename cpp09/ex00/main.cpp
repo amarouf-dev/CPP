@@ -13,7 +13,7 @@ int main (int ac, char **av)
     {
         BitcoinExchange b;
     
-        ReadArgFile(av[1]);
+        b.ReadArgFile(av[1]);
     }
     catch(const std::exception& e)
     {
