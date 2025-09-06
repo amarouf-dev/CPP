@@ -1,11 +1,11 @@
-NAME = Easyfind
+NAME = PmergeMe
 CPP = c++
 Cflags = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
-SRC = main.cpp \
+SRC = main.cpp PmergeMe.cpp\
 
-HDR = easyfind.hpp \
+HDR = PmergeMe.hpp\
 
 OSRC = $(SRC:.cpp=.o)
 
