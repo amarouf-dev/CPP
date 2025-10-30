@@ -53,6 +53,9 @@ int main (int ac, char **av)
         std::deque<int> d(merge.GetVec().begin(), merge.GetVec().end());
         merge.SetDeq(d);
         merge.SortVector();
+        merge.SortDeque();
+	    std::cout << "Time to process a range of " << merge.GetVec().size() << " elements with std::[vector] : " << merge.GetVecTime() << std::endl;
+	    std::cout << "Time to process a range of " << merge.GetDeq().size() << " elements with std::[deque] : " << merge.GetDeqTime() << std::endl;
     }
     catch(const std::exception& e)
     {
