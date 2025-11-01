@@ -10,13 +10,9 @@ void    RPN::parsInput(std::string str)
 	for (size_t i = 0; i < str.size(); i ++)
 	{
 		if (str[i] == ' ')
-		{
 			continue;
-		}
 		else if (std::isdigit(str[i]))
-		{
 			this->r.push(str[i] - '0');
-		}
 		else if ((str[i] == '+' || str[i] == '-' || str[i] == '*' || str[i] == '/') && (r.size() > 1))
 		{
 			n2 = this->r.top();
