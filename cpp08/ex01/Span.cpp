@@ -36,32 +36,35 @@ Span::~Span(){}
 void Span::addNumber(int nbr)
 {
     if (size > this->v.size())
-    {
         v.push_back(nbr);
-    }
     else
-    {
         throw std::runtime_error("Error: the number can't be added !");
-    }
 }
 
-int Span::shortestSpan(void)
+int Span::shortestSpan()
 {
-    int mins = 0;
-    int tmp = std::numeric_limits<int>::max();
+    if (v.size() < 2)
+        throw std::runtime_error("not enough numbers");
+
     std::sort(v.begin(), v.end());
 
-    for (std::vector<int>::iterator it = v.begin(); it + 1 != v.end(); ++it)
+    int shortest = std::numeric_limits<int>::max();
+
+    for (size_t i = 0; i < v.size() - 1; ++i)
     {
-        mins = *(it + 1) - *it;
-        if (mins < tmp)
-            tmp = mins;
+        int diff = v[i + 1] - v[i];
+        if (diff < shortest)
+            shortest = diff;
     }
-    return (tmp);
+
+    return shortest;
 }
 
 int Span::longestSpan(void)
 {
+    if (v.size() < 2)
+        throw std::runtime_error("not enough numbers");
+
     int max = std::max_element(v.begin(), v.end())[0];
     int min = std::min_element(v.begin(), v.end())[0];
     return (max - min);

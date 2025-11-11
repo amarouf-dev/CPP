@@ -2,6 +2,7 @@
 #include "PmergeMe.hpp"
 #include <climits>
 #include <stdlib.h>
+#include <iomanip>
 
 bool Overflow(std::string tmp)
 {
@@ -49,13 +50,23 @@ int main (int ac, char **av)
     {
         if (ac < 2)
             throw std::runtime_error("Error: Invalid input value!");
+        
         merge.SetVec(Parsinp(ac, av));
+
         std::deque<int> d(merge.GetVec().begin(), merge.GetVec().end());
+
         merge.SetDeq(d);
         merge.SortVector();
         merge.SortDeque();
-	    std::cout << "Time to process a range of " << merge.GetVec().size() << " elements with std::[vector] : " << merge.GetVecTime() << std::endl;
-	    std::cout << "Time to process a range of " << merge.GetDeq().size() << " elements with std::[deque] : " << merge.GetDeqTime() << std::endl;
+
+        std::cout << std::fixed << std::setprecision(6);
+        std::cout << "Time to process a range of " << merge.GetVec().size()
+            << " elements with std::[vector] : "
+            << merge.GetVecTime() * 1000 << " us" << std::endl;
+
+        std::cout << "Time to process a range of " << merge.GetDeq().size()
+            << " elements with std::[deque] : "
+            << merge.GetDeqTime() * 1000 << " us" << std::endl;
     }
     catch(const std::exception& e)
     {

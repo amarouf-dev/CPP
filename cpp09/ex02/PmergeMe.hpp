@@ -32,8 +32,8 @@ class PmergeMe
     double GetDeqTime();
     double GetVecTime();
 
-    std::vector<int> GetVec(void) const;
-    std::deque<int> GetDeq(void) const;
+    const std::vector<int>& GetVec(void) const;
+    const std::deque<int>& GetDeq(void) const;
 };
 
 #endif
